@@ -108,6 +108,7 @@ nav li:hover .nav-underline{
     font-size: 40px;
     color: var(--darkBlue);
     transition: transform .5s ease;
+    cursor: pointer;
 }
 .hamburguer-icon:hover{
     transform: scale(1.1);
@@ -171,27 +172,33 @@ li.hidden{
         overflow: visible;
         z-index: 999;
     }
-    .hamburguer-nav:hover ul{
-        display: block;
-        right: -30px;
-        top: -30px;
-        transition: right 1s ease;
-    }
+
     .hamburguer-nav ul{
         flex-direction: column;
         align-items: center;
+        justify-content: center;
         background-color: white;
         position: absolute;
         right: -800px;
         top: -30px;
         padding: 100px 0px;
-        min-width: 50vw;
-        max-width: 500px;
-        /* display: none; */
+        transition: right 1s ease;
+        z-index: 999;
+        height: 100vh;
     }
+    .hamburguer-nav ul.show-menu{
+        right: -30px;
+        top: -30px;
+        transition: right 1s ease;  
+    }
+    
+
     .hamburguer-nav li{
         text-align: center;
         transition: transform .5s ease;
+        border-bottom: 1px solid var(--lightBlue);
+        width: 60%;
+        padding:  30px 20px ;
     }
     .hamburguer-nav li:hover{
         transform: scale(1.1);
@@ -202,6 +209,16 @@ li.hidden{
         left: 30px;
         font-size: 30px;
         color: var(--darkBlue);
+    }
+    @media screen and (max-width:1200px) {
+        .hamburguer-nav ul{
+            width: 50vw;
+        }
+    }
+    @media screen and (max-width: 511px) {
+        .hamburguer-nav ul{
+            width: 80vw;
+        }
     }
     .language-selector {
         position: absolute;
@@ -364,13 +381,13 @@ main{
     justify-content: space-between;
 }
 .about-us-img{
-    background: url(../img/cubeta.jpg);
+    background: url(../img/cubeta.png);
 }
 .investment-img{
-    background: url(../img/hornos.jpg);
+    background: url(../img/hornos.png);
 }
 .management-img{
-    background-image: url(../img/produccion-secos.jpg);
+    background-image: url(../img/produccion-secos.png);
 }
 .home-page .section-img{
     background-repeat: no-repeat;
@@ -471,7 +488,8 @@ a.button-2:hover i{
 }
 
 
-section.contact{
+section.contact,
+section.jobs{
     background-color: white;
     flex-direction: column;
     align-items: center;
@@ -479,32 +497,38 @@ section.contact{
     padding: 75px;
     position: relative;
 }
-section.contact .contact-text{
+section.contact .contact-text,
+section.jobs .jobs-text{
     width: 100%;
     display: flex;
     justify-content: center;
 }
-section.contact p>a{
+section.contact p>a,
+section.jobs p >a{
     color: var(--darkBlue);
     font-weight: 600;
 }
 
-section.contact .button{
+section.contact .button,
+section.jobs .button{
     margin-top: 0;
     margin-right: 0;
     margin-left: 40px;
 }
 
 @media screen and (max-width: 900px) {
-    section.contact{
+    section.contact,
+    section.jobs{
         padding: 40px;
     }
-    section.contact .contact-text{
+    section.contact .contact-text,
+    section.jobs .jobs-text{
         flex-direction: column;
         align-items: center;
         text-align: center;
     }
-    section.contact .button{
+    section.contact .button,
+    section.jobs .button{
         margin-left: 0;
         margin-top: 10px;
     }
@@ -570,7 +594,7 @@ footer a{
     align-items: center;
 }
 .about-us-page .section-header{
-    background-image: url(../img/engranaxes2.jpg);
+    background-image: url(../img/engranaxes2.png);
 }
 h1{
     color: white;
@@ -675,7 +699,7 @@ h1{
     }
 }
 .investment-contact{
-    background-image: url(../img/laptop.png);
+    background-image: url(../img/laptop2.png);
     background-position-y: 65%;
     background-size: 100%;
     display: flex;
@@ -771,6 +795,9 @@ h1{
     margin-bottom: 0;
 }
 @media screen and (max-width:900px) {
+    .managers{
+        padding-bottom: 0;
+    }
     .manager{
         flex-direction: column;
         margin-bottom: 80px;
@@ -826,6 +853,12 @@ textarea{
     background-color: #e0e6eb;
     border-radius: 4px;
     border-style: none;
+    transition: transform .5s ease;
+}
+input:focus,
+textarea:focus{
+    outline: none;
+    transform: scale(1.02);
 }
 input[type="submit"]{
     background-color: white;
@@ -840,6 +873,7 @@ input[type="submit"]{
 input[type="submit"]:hover{
     background-color: var(--darkBlue);
     color: white;
+    transform: scale(1.02);
 }
 @media screen and (max-width:900px) {
     form li{
