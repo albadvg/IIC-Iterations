@@ -13,6 +13,7 @@ html {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+    overflow-x: hidden;
   }
   *, *:before, *:after {
     -webkit-box-sizing: inherit;
@@ -30,6 +31,7 @@ body{
     font-family: Montserrat;
     font-weight: 400;
     overflow-x: hidden;
+    position: relative;
 }
 h1{
     text-align: center;
@@ -57,6 +59,12 @@ header{
     position: absolute;
     top: 20px;
     z-index: 99;
+}
+@media screen and (max-width: 670px) {
+    .logo-container img{
+        width: 120px;
+        margin-left: 20px;
+    } 
 }
 .desktop-nav{
     margin-right: 120px;
@@ -258,8 +266,13 @@ li.hidden{
     background-color: var(--lightBlue); 
     opacity: 1;
 }
-
-
+@media screen and (max-width:900px) {
+    .bars-wrapper{
+        width: 180%;
+        margin-left: -170px;
+    }
+    
+}
 .hero-text-container{
     height: 100%;
     width:50%;
@@ -294,14 +307,11 @@ li.hidden{
     font-weight: 800;
     margin-left: 0px;
     width: 400px;
-
 }
 @keyframes textAnimation {
     from{opacity: 0; margin-left: -60px;}
     to{opacity:1; margin-left: 0;}
 }
-
-
 .underline{
     height: 10px;
     width: 0%;
@@ -322,6 +332,15 @@ li.hidden{
         padding-left: 75px;
         display: flex;
         justify-content: center;
+    }
+    .hero-text-container p,
+    .hero-text-wrapper p:nth-child(4){
+        width: 80vw;   
+    }
+    .hero-text-wrapper{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 }
 
@@ -370,6 +389,7 @@ section.investment-focus .section-text{
     }
     .home-page .section-text{
         width: 100%;
+        padding: 50px;
     }
     .home-page .section-img{
         width: 100%;
@@ -444,7 +464,11 @@ a.button-2:hover i{
     opacity: 1;
 }
 
-
+@media screen and (max-width: 900px) {
+    div.button-container p {
+        font-size:  17px;
+    }
+}
 
 
 section.contact{
@@ -472,9 +496,17 @@ section.contact .button{
 }
 
 @media screen and (max-width: 900px) {
+    section.contact{
+        padding: 40px;
+    }
     section.contact .contact-text{
         flex-direction: column;
         align-items: center;
+        text-align: center;
+    }
+    section.contact .button{
+        margin-left: 0;
+        margin-top: 10px;
     }
 }
 
@@ -751,11 +783,18 @@ h1{
     .manager-position{
         text-align: center;
     }
+    .manager-name{
+        font-size:24px ;
+    }
+    .manager-position{
+        font-size: 20px;
+    }
     .manager-text{
         width: 80vw;
         margin: auto;
     }
 }
+
 
 /******CONTACT*******/
 
@@ -802,11 +841,17 @@ input[type="submit"]:hover{
     background-color: var(--darkBlue);
     color: white;
 }
+@media screen and (max-width:900px) {
+    form li{
+        width: 80vw;
+    }
+}
 
 .map iframe{
     width: 300px;
     height: 445px;
 }
+
 .contact-info>p{
     font-size: 20px;
     font-weight: 800;
@@ -852,6 +897,12 @@ input[type="submit"]:hover{
     .contact-info a{
         text-align: center;
     }
+}
+
+@media screen and (max-width:900px){
+   .map iframe{
+    width: 80vw;
+   }
 }
 
 
