@@ -29,6 +29,7 @@ ul{
 body{
     font-family: Montserrat;
     font-weight: 400;
+    overflow-x: hidden;
 }
 h1{
     text-align: center;
@@ -48,6 +49,7 @@ header{
     display: flex;
     align-items: center;
     position: relative;
+    height: 90px;
 }
 .logo-container img{
     margin-left: 70px;
@@ -56,11 +58,12 @@ header{
     top: 20px;
     z-index: 99;
 }
-header nav{
-    margin-right: 80px;
+.desktop-nav{
+    margin-right: 120px;
     margin-left: auto;
     overflow: hidden;
 }
+
 nav ul{
     display: flex;
 }
@@ -87,10 +90,19 @@ nav a{
 }
 
 nav li:hover .nav-underline{
-    /* border-bottom: 3px solid var(--darkBlue); */
-    /* background-color: var(--darkBlue); */
-    transform: translateY(-13px);
-   
+    transform: translateY(-13px);  
+}
+
+.hamburguer-nav{
+    display: none;   
+}
+.hamburguer-icon{
+    font-size: 40px;
+    color: var(--darkBlue);
+    transition: transform .5s ease;
+}
+.hamburguer-icon:hover{
+    transform: scale(1.1);
 }
 
 .language-selector{
@@ -138,6 +150,62 @@ li.hidden{
 .language-selector:hover img{
     transform: rotate(180deg);
 }
+@media screen and (max-width: 1200px) {
+    .desktop-nav{
+        display: none;
+    }
+    .hamburguer-nav{
+        display: block;
+        margin-right: 20px;
+        position: absolute;
+        top: 25px;
+        right: 10px;
+        overflow: visible;
+        z-index: 999;
+    }
+    .hamburguer-nav:hover ul{
+        display: block;
+        right: -30px;
+        top: -30px;
+        transition: right 1s ease;
+    }
+    .hamburguer-nav ul{
+        flex-direction: column;
+        align-items: center;
+        background-color: white;
+        position: absolute;
+        right: -800px;
+        top: -30px;
+        padding: 100px 0px;
+        min-width: 50vw;
+        max-width: 500px;
+        /* display: none; */
+    }
+    .hamburguer-nav li{
+        text-align: center;
+        transition: transform .5s ease;
+    }
+    .hamburguer-nav li:hover{
+        transform: scale(1.1);
+    }
+    .hamburguer-nav .bi-x-lg{
+        position: absolute;
+        top: 30px;
+        left: 30px;
+        font-size: 30px;
+        color: var(--darkBlue);
+    }
+    .language-selector {
+        position: absolute;
+        top: 45px;
+        right: 120px;
+    }
+    .language-selector ul{
+        left: 0;
+    }
+}
+
+/************HERO*******************/
 .hero-container{
     width: 100%;
     height: 70vh;
@@ -147,7 +215,6 @@ li.hidden{
     overflow: hidden;
     background-color: var(--darkBlue);
 }
-
 #icono-hero{
     width: 380px;
     position: absolute;
@@ -164,7 +231,18 @@ li.hidden{
     to{opacity: 1; width: 400px;}
 }
 
-
+@media screen and (max-width: 1200px){
+    @keyframes animacionIconoHero{
+        from{opacity: 0;width: 300px;}
+        to{opacity: 1; width: 350px;}
+    }
+    
+}
+@media screen and (max-width:900px) {
+    #icono-hero{
+        display: none;
+    }
+}
 .bars-wrapper{
     height: 100%;
     width: 80%;
@@ -238,8 +316,17 @@ li.hidden{
     from{margin-left: -60px; width: 0%;}
     to{margin-left: 0; width: 100%;}
 }
+@media screen and (max-width:900px) {
+    .hero-text-container{
+        width: 100%;
+        padding-left: 75px;
+        display: flex;
+        justify-content: center;
+    }
+}
 
 
+/***********MAIN***********/
 main{
     position: relative;
 }
@@ -257,14 +344,40 @@ main{
     flex-direction: column;
     justify-content: space-between;
 }
+.about-us-img{
+    background: url(../img/cubeta.jpg);
+}
+.investment-img{
+    background: url(../img/hornos.jpg);
+}
+.management-img{
+    background-image: url(../img/produccion-secos.jpg);
+}
 .home-page .section-img{
+    background-repeat: no-repeat;
+    background-size: cover;
     position: relative;
     width: 50%;
 }
-.home-page .section-img img{
-    display: block;
-    width: 100%;
-    position: relative;
+section.investment-focus .section-text{
+    order: 1;
+}
+
+@media screen and (max-width: 900px) {
+    .home-page section{
+        flex-direction: column;
+        max-height: unset;
+    }
+    .home-page .section-text{
+        width: 100%;
+    }
+    .home-page .section-img{
+        width: 100%;
+        height: 300px;
+    }
+    section.investment-focus .section-text{
+        order: 0;
+    }
     
 }
 div.transparencia{
@@ -332,9 +445,7 @@ a.button-2:hover i{
 }
 
 
-section.investment-focus .section-text{
-    order: 1;
-}
+
 
 section.contact{
     background-color: white;
@@ -359,24 +470,15 @@ section.contact .button{
     margin-right: 0;
     margin-left: 40px;
 }
-.bars-wrapper-2{
-    height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    /* margin-left: auto; */
-    position: absolute;
-    top: -20px;
-    left: -100px;
-}
-.bar2{
-    width: .5px;
-    border-radius: 5px;
-    background-color: var(--lightBlue); 
-    opacity: 1;
+
+@media screen and (max-width: 900px) {
+    section.contact .contact-text{
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
+/***********FOOTER************/
 footer{
     display: flex;
     padding: 75px;
@@ -404,18 +506,30 @@ footer nav li:hover a{
 footer a{
     color: white;
 }
+@media screen and (max-width:900px) {
+    footer{
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+    footer ul{
+        margin: 40px 0 0 0!important;
+        /* margin-left: 0!important; */
+       
+        padding-left: 0;
+        padding-top: 30px;
+        border-left: none;
+        border-top: 1px solid white ;
 
-/**************ABOUT US*******************/
-.about-us-page section{
-    
-   
+    }
 }
+/**************ABOUT US*******************/
+
 .about-us-page section{   
     background-color: var(--lightBlue);
 }
 .section-header{
     height: 180px;
-    
     background-repeat: no-repeat;
     background-size: 100%;
     width: 100%;
@@ -444,7 +558,18 @@ h1{
     height: 350px;
     width: 1px;
 }
-
+@media screen and (max-width:900px) {
+    .about-us-content{
+        flex-direction: column;
+        padding: 60px 40px;
+    }
+    .about-us-content p{
+        width: 100%;
+    }
+    .vertical-line{
+        display: none;
+    }
+}
 /****INVESTMENT FOCUS*****/
 .investment-page .section-header{
     background-image: url(../img/us2.png);
@@ -455,11 +580,9 @@ h1{
     display: flex;
     flex-direction: column;
     align-items: center;
-    
-
 }
 .investment-intro{
-    width: 60%;
+    width: 70%;
     padding: 50px 200px 10px 200px;
 }
 .investment-intro p:nth-child(2){
@@ -468,7 +591,7 @@ h1{
 }
 .investment-criteria{
     margin-bottom: 50px;
-    width: 60%;
+    width: 70%;
     padding: 0 200px;
 }
 .investment-criteria ul{   
@@ -487,6 +610,37 @@ h1{
     position: absolute;
     top:0%;
     left: -40px;
+}
+@media screen and (max-width:1200px){
+    .investment-intro{
+        padding: 60px 40px 10px 40px;
+    }
+    .investment-criteria{
+        padding: 0 40px;
+    }
+}
+@media screen and (max-width:900px){
+    .investment-intro{
+        width: 90%;
+        padding: 60px 40px 10px 40px;
+    }
+    .investment-criteria{
+        width: 90%;
+        padding: 0 40px;
+    }
+}
+@media screen and (max-width:500px){
+    .investment-intro{
+        width: 90%;
+        padding: 60px 20px 10px 20px;
+    }
+    .investment-criteria{
+        width: 90%;
+        padding: 0 20px;
+    }
+    .investment-criteria .bi{
+        left: -30px;
+    }
 }
 .investment-contact{
     background-image: url(../img/laptop.png);
@@ -514,6 +668,19 @@ h1{
     color: white;
 }
 
+@media screen and (max-width:900px) {
+    .investment-contact{
+        flex-direction: column;
+        padding: 20px;
+        text-align: center;
+
+    }
+    .investment-contact .button-container{
+        margin-left: 0;
+        height: 50px;
+    }
+}
+
 /**********MANAGEMENT TEAM***********/
 .team-page h1{
     color: var(--darkBlue);
@@ -533,6 +700,7 @@ h1{
     margin-top: 50px;
     color: var(--darkBlue);
     font-weight: 400;
+    text-align: center;
 }
 .managers{
     display: flex;
@@ -569,6 +737,24 @@ h1{
 .manager-info{
     left: 0;
     margin-bottom: 0;
+}
+@media screen and (max-width:900px) {
+    .manager{
+        flex-direction: column;
+        margin-bottom: 80px;
+        row-gap: 20px;
+    }
+    .manager img{
+        margin: auto;
+    }
+    .manager-name,
+    .manager-position{
+        text-align: center;
+    }
+    .manager-text{
+        width: 80vw;
+        margin: auto;
+    }
 }
 
 /******CONTACT*******/
@@ -646,6 +832,26 @@ input[type="submit"]:hover{
     font-weight: 400;
     color: var(--darkBlue);
     font-size: 17px;
+}
+@media screen and (max-width: 1238px){
+    .contact-content{
+        row-gap: 40px;
+    }
+    .contact-info{
+        order: -1;
+        flex-basis: 100%;
+    }
+    .map{
+        order: 1;
+    }
+    .map iframe{
+        width: 400px;
+
+    }
+    .contact-info p,
+    .contact-info a{
+        text-align: center;
+    }
 }
 
 
