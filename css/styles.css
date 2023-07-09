@@ -9,6 +9,32 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
 /* #1859ff */
 /* rgba(0, 255, 255, 0.568) */
+
+/* PRODUCTION NOTES */
+.production-note{
+    background-color: rgb(233, 232, 232);
+    padding: 20px;
+    width: 100%;
+}
+.production-note img{
+    display: none;
+}
+.production-note span{
+    text-decoration: underline;
+    position: relative;
+}
+.production-note img{
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    z-index: 99;
+}
+.production-note span:hover img{
+    display: block;
+}
+
 html {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -69,13 +95,13 @@ header{
 .desktop-nav{
     margin-right: 120px;
     margin-left: auto;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 nav ul{
     display: flex;
 }
-header nav li{
+li.menu-item{
     padding: 20px;
     position: relative;
 }
@@ -101,6 +127,42 @@ nav li:hover .nav-underline{
     transform: translateY(-13px);  
 }
 
+
+ul.sub-menu{
+    position: absolute;
+    left: 0;
+    top: 60px;
+    z-index: 999;
+    width: 100%;
+    padding-left: 0;
+    flex-direction: column;
+    height: 0;
+    overflow: hidden;
+    transition: height .5s ease;
+}
+li.sub-menu-item{
+    background-color: white;
+    padding: 20px;     
+}
+li.sub-menu-item:hover a{
+    font-weight: 400;
+}
+.menu-item:hover ul.sub-menu{
+    height: 20rem; 
+}
+.menu-chevron{
+    margin-left: 10px;
+    margin-bottom: -2px;
+    transition: transform .5s ease;
+    cursor: pointer;
+
+}
+.menu-item:hover .menu-chevron{
+    transform: rotate(180deg);
+}
+
+
+
 .hamburguer-nav{
     display: none;   
 }
@@ -117,6 +179,7 @@ nav li:hover .nav-underline{
 .language-selector{
     margin-right: 35px;
     position: relative;
+    cursor: pointer;
 }
 
 .language-selector ul{
@@ -132,13 +195,11 @@ nav li:hover .nav-underline{
     transition: height .5s ease;
     overflow: hidden;
 }
-.language-selector:hover ul{
-    display: block;
-}
+
 .language-selector li{
     background-color: white;
     padding: 10px;
-    width: 65px;
+    width: 68px;
     height: 39px;
     font-weight: 300;
 }
@@ -147,15 +208,11 @@ nav li:hover .nav-underline{
     transform: translateY(2px);
     transition: transform .5s ease;
 }
-li.hidden{
-    display: none;
-}
+
 .language-selector ul:hover{
-    height: 120px;
+    height: calc(39px * 3);
 }
-.language-selector ul:hover .hidden{
-    display: block;
-}
+
 .language-selector:hover img{
     transform: rotate(180deg);
 }
@@ -244,7 +301,7 @@ li.hidden{
     width: 380px;
     position: absolute;
     top: 15%;
-    left: 12%;
+    right: 17%;
     opacity: 0;
     z-index: 1;
     animation: animacionIconoHero 2s ease;
@@ -294,10 +351,9 @@ li.hidden{
     height: 100%;
     width:50%;
     position: absolute;
-    right: 0;
+    left: 20px;
     top: 0;
     padding: 75px;
-    padding-left: 0;
     display: flex;
     align-items: center;
     margin: auto;
@@ -367,10 +423,10 @@ main{
     position: relative;
 }
 
-.home-page section{
+.home-page section:not(.contact){
     display: flex;
     justify-content: space-between;
-    max-height: 60vh;
+    height: 440px;
     overflow: hidden;
 }
 .home-page .section-text{
@@ -384,11 +440,62 @@ main{
     background: url(../img/cubeta.png);
 }
 .investment-img{
-    background: url(../img/hornos.png);
+    /* background: url(../img/hornos.png); */
 }
-.management-img{
-    background-image: url(../img/produccion-secos.png);
+/* carrusel */
+.container{
+    height: 100%;
 }
+.owl-carousel{
+    position: relative;
+    height: 100%;
+}
+.owl-stage-outer,
+.owl-stage,
+.owl-item,
+.owl-item img{
+    height: 100%;
+}
+.owl-item img{
+    object-fit: cover;
+}
+.owl-nav{
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    margin-top: 0;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+}
+
+.owl-nav .owl-prev ,
+.owl-nav .owl-next{
+    /* height: 40px; */
+    width: 40px;
+}
+.owl-nav .owl-prev:hover ,
+.owl-nav .owl-next:hover{
+    cursor:pointer;
+}
+.owl-prev span , .owl-next span{
+    font-size: 50px;
+    color: rgba(255, 255, 255);
+}
+.owl-theme .owl-nav [class*="owl-"]:hover{
+    background: rgba(255, 255, 255, 0.699);
+}
+.owl-theme .owl-nav [class*='owl-']:hover{
+    background: rgba(29, 27, 25, 0.322);
+}
+.num-img{
+    height: 50px;
+    width: 50px;
+    background-color: red;
+}
+
 .home-page .section-img{
     background-repeat: no-repeat;
     background-size: cover;
@@ -425,6 +532,7 @@ div.transparencia{
     position: absolute;
     top: 0;
     right: 0;
+    z-index: 2;
 }
 
 a.button{
@@ -614,6 +722,12 @@ h1{
     height: 350px;
     width: 1px;
 }
+
+#about-us-1 .about-us-content{
+    flex-direction: column;
+    gap: 50px;
+    align-items: center;
+}
 @media screen and (max-width:900px) {
     .about-us-content{
         flex-direction: column;
@@ -753,7 +867,7 @@ h1{
     flex-direction: column;
 }
 .team-intro{
-    margin-top: 50px;
+    margin-top: 80px;
     color: var(--darkBlue);
     font-weight: 400;
     text-align: center;
@@ -768,7 +882,10 @@ h1{
 .manager{
     display: flex;
     justify-content: center;
-    margin-bottom: 30px;
+    
+}
+.manager:not(:last-of-type){
+    margin-bottom: 100px;
 }
 .manager-text{
     width: 680px;
@@ -821,7 +938,43 @@ h1{
         margin: auto;
     }
 }
+#team-1-main .section-header,
+#team-2-main .section-header,
+#team-3-main .section-header{
+    background-image: url(../img/fondo-team-2.jpg);
+}
+#team-1-main h1,
+#team-2-main h1,
+#team-3-main h1{
+    color: white;
+}
 
+#team-2-main .manager,
+#team-3-main .manager{
+    background-color: #e7ecee;
+    padding: 70px;
+}
+
+#team-2-main .manager-text{
+    width: 560px;
+}
+#team-2-main .manager-name{
+    font-size: 25px;
+}
+#team-2-main .manager-position{
+    font-size: 18px;
+}
+#team-3-main .managers{
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 50px;
+    padding: 70px 120px;
+}
+#team-3-main .manager{
+    min-width: 300px;
+    width: calc(50% - 25px);
+    margin-bottom: 0;
+}
 
 /******CONTACT*******/
 

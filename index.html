@@ -6,7 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/normalize.css">
+
+    <link rel="stylesheet" href="owlcarousel/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="owlcarousel/assets/owl.theme.default.min.css">
+
     <link rel="stylesheet" href="css/styles.css">
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 </head>
 <body class="home-page">
@@ -16,11 +21,32 @@
         </div>
         <nav class="desktop-nav">
             <ul>
-                <li><a href="index.html">HOME</a><div class="nav-underline"></div></li>
-                <li><a href="about-us.html">ABOUT US</a><div class="nav-underline"></div></li>
-                <li><a href="investment.html">INVESTMENT FOCUS</a><div class="nav-underline"></div></li>
-                <li><a href="team.html">MANAGEMENT TEAM</a><div class="nav-underline"></div></li>
-                <li><a href="contact.html">CONTACT</a><div class="nav-underline"></div></li>
+                <li class="menu-item"><a href="index.html">HOME</a><div class="nav-underline"></div></li>
+                <li class="menu-item">
+                    <a href="about-us.html">ABOUT US</a>
+                    <img src="img/chevron-down.svg" alt="" class="menu-chevron">
+                    <div class="nav-underline"></div>
+                    <ul class="sub-menu">
+                        <li class="sub-menu-item"><a href="about-us-1.html">Option 1</a></li>
+                        <li class="sub-menu-item"><a href="about-us-2.html">Option 2</a></li>
+                        <li class="sub-menu-item"><a href="about-us-3.html">Option 3</a></li>
+                        <li class="sub-menu-item"><a href="about-us-4.html">Option 4</a></li>
+                    </ul>
+                </li>
+                <li class="menu-item"><a href="investment.html">INVESTMENT FOCUS</a><div class="nav-underline"></div></li>
+                <li class="menu-item"><a href="#">CASE STUDIES</a><div class="nav-underline"></div></li>
+                <li class="menu-item">
+                    <a href="team.html">MANAGEMENT TEAM</a>
+                    <img src="img/chevron-down.svg" alt="" class="menu-chevron">
+                    <div class="nav-underline"></div>
+                    <ul class="sub-menu">
+                        <li class="sub-menu-item"><a href="team-1.html">Option 1</a></li>
+                        <li class="sub-menu-item"><a href="team-2.html">Option 2</a></li>
+                        <li class="sub-menu-item"><a href="team-3.html">Option 3</a></li>
+                        <li class="sub-menu-item"><a href="team-4.html">Option 4</a></li>
+                    </ul>
+                </li>
+                <li class="menu-item"><a href="contact.html">CONTACT</a><div class="nav-underline"></div></li>
             </ul>
         </nav>
         <nav class="hamburguer-nav">
@@ -36,7 +62,7 @@
         </nav>
         <div class="language-selector">
             <ul>  
-                <li>ES <img src="img/chevron-down.svg" alt=""></li>            
+                <li>EN <img src="img/chevron-down.svg" alt=""></li>            
                 <li class="hidden">DE</li>
                 <li class="hidden">ES</li>
             </ul>
@@ -259,11 +285,9 @@
                 <div class="text-container">
                     <h2>Investment Focus</h2>
                     <p>Our investment strategy is focused on businesses in special situations, such as strategic refocus of the seller, insufficient earnings or a lack of successors.
-                        <!-- We are particularly active in supporting corporate divestitures and complex carve outs, in which sellers require a trusted partner to offer sensitive and long-term solutions. -->
                     </p>
                     <p>Learn about our investment criteria</p>
                 </div>
-                <!-- <a href="#" class="button">Learn more</a>                -->
                 <div class="button-container">
                     <p>Check our investment criteria</p>
                     <a href="investment.html" class="button-2">
@@ -274,7 +298,19 @@
                 </div>
             </div>
             <div class="section-img investment-img">
-                <div class="transparencia"></div>
+                <div class="container">
+                    <!-- <div class="transparencia"></div> -->
+                    <div class="owl-carousel owl-theme carousel-home">
+                        <img src="img/foto-home-prueba-2.jpg" alt="" width="100%">
+                        <img src="img/foto-home-prueba-5.jpg" alt="" width="100%">
+                        <img src="img/foto-home-prueba-1.jpg" alt="" width="100%">
+                        <img src="img/foto-home-prueba-6.jpg" alt="" width="100%">
+                        <img src="img/hornos.jpg" alt="" width="100%">
+                        <img src="img/foto-home-prueba-3.jpg" alt="" width="100%">
+                        <img src="img/foto-home-prueba-4.jpg" alt="" width="100%">
+                       
+                    </div>
+                </div>
             </div>   
         </section>
 
@@ -295,7 +331,20 @@
                           
             </div>
             <div class="section-img management-img">
-                <div class="transparencia"></div>
+                <div class="container">
+                    <!-- <div class="transparencia"></div> -->
+                    <div class="owl-carousel owl-theme carousel-home">
+                        <img src="img/team3.jpg" alt="" width="100%"> 
+                        <img src="img/hornos.jpg" alt="" width="100%">
+                        <img src="img/foto-home-prueba-1.jpg" alt="" width="100%">
+                        <img src="img/foto-home-prueba-2.jpg" alt="" width="100%">
+                        <img src="img/foto-home-prueba-3.jpg" alt="" width="100%">
+                        <img src="img/foto-home-prueba-4.jpg" alt="" width="100%">
+                        <img src="img/foto-home-prueba-5.jpg" alt="" width="100%">
+                        <img src="img/foto-home-prueba-6.jpg" alt="" width="100%">
+                       
+                    </div>
+                </div>
             </div>   
         </section>
         <section class="contact">
@@ -333,6 +382,10 @@
             
         </div>
     </footer>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="owlcarousel/owl.carousel.min.js"></script>
     <script src="js/scripts.js"></script>
+
 </body>
 </html>

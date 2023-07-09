@@ -54,3 +54,12 @@ console.log(closeButton)
 console.log(body)
 
 
+///CAROUSEL
+$(".carousel-home").owlCarousel({
+    items:1,
+    nav:true,
+    merge:true,
+    dots: true,
+    lazyLoad:true,
+});
+
