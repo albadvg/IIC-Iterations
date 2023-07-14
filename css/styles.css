@@ -929,6 +929,9 @@ h1{
     top:0%;
     left: -40px;
 }
+.investment-iteration .investment-criteria .bi{
+    color: var(--lightBrown);
+}
 @media screen and (max-width:1200px){
     .investment-intro{
         padding: 60px 40px 10px 40px;
@@ -969,9 +972,11 @@ h1{
     justify-content: center;
     position: relative;
 }
+
 .investment-1 .investment-contact{
-    background-image: url(../img/banner-contacto2.jpg);
+    background-image: url(../img/laptop11.jpg);
 }
+
 /* .overlay{
     position: absolute;
     height: 100%;
