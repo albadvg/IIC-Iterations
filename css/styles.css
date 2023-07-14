@@ -856,7 +856,7 @@ h1{
 
 .about-us-3 strong{
     font-weight: 700;
-    font-size: 22px;
+    font-size: 20px;
     color: var(--darkBlue);
 }
 .about-us-4 .txt strong{
@@ -865,7 +865,7 @@ h1{
     font-weight: 600;
     display: inline-block;
     position: absolute;
-    margin-top: -80px;
+    margin-top: -120px;
 }
 .about-us-3 span{
     font-weight: 600;
@@ -1243,6 +1243,10 @@ input[type="submit"]:hover{
     color: white;
     transform: scale(1.02);
 }
+#recaptcha {
+    width: 100%;
+    margin-bottom: 10px;
+}
 @media screen and (max-width:900px) {
     form li{
         width: 80vw;
@@ -1251,7 +1255,7 @@ input[type="submit"]:hover{
 
 .map iframe{
     width: 300px;
-    height: 445px;
+    height: 545px;
 }
 
 .contact-info>p{
