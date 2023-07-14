@@ -31,9 +31,18 @@
                         <li class="sub-menu-item"><a href="about-us-2.html">Option 2</a></li>
                         <li class="sub-menu-item"><a href="about-us-3.html">Option 3</a></li>
                         <li class="sub-menu-item"><a href="about-us-4.html">Option 4</a></li>
+                        <li class="sub-menu-item"><a href="about-us-5.html">Option 5</a></li>
+                        <li class="sub-menu-item"><a href="about-us-6.html">Option 6</a></li>
                     </ul>
                 </li>
-                <li class="menu-item"><a href="investment.html">INVESTMENT FOCUS</a><div class="nav-underline"></div></li>
+                <li class="menu-item">
+                    <a href="investment.html">INVESTMENT FOCUS</a>
+                    <img src="img/chevron-down.svg" alt="" class="menu-chevron">
+                    <div class="nav-underline"></div>
+                    <ul class="sub-menu">
+                        <li class="sub-menu-item"><a href="investment-1.html">Option 1</a></li>
+                    </ul>
+                </li>
                 <li class="menu-item"><a href="#">CASE STUDIES</a><div class="nav-underline"></div></li>
                 <li class="menu-item">
                     <a href="team.html">MANAGEMENT TEAM</a>
@@ -44,6 +53,7 @@
                         <li class="sub-menu-item"><a href="team-2.html">Option 2</a></li>
                         <li class="sub-menu-item"><a href="team-3.html">Option 3</a></li>
                         <li class="sub-menu-item"><a href="team-4.html">Option 4</a></li>
+                        <li class="sub-menu-item"><a href="team-5.html">Option 5</a></li>
                     </ul>
                 </li>
                 <li class="menu-item"><a href="contact.html">CONTACT</a><div class="nav-underline"></div></li>
@@ -70,7 +80,7 @@
     </header>
     <div class="hero-container">
         <img src="img/icono-vector-ok.svg" alt="" id="icono-hero">
-        <div class="bars-wrapper">
+        <!-- <div class="bars-wrapper">
             <div class="bar" id="bar-1"></div>
             <div class="bar" id="bar-2"></div>
             <div class="bar" id="bar-3"></div>
@@ -242,15 +252,15 @@
             <div class="bar" id="bar-169"></div>
             <div class="bar" id="bar-170"></div>
 
-        </div> <!--bars wrapper--> 
+        </div> bars wrapper  -->
 
-        
+        <div class="hero__bars"></div>
         <div class="hero-text-container">
             <div class="hero-text-wrapper">
                 <p>We acquire manufacturers and service <p>
                     <p>providers in special situations and transform them into</p>  
                     <p class="orange-text">long-term sector leaders</p>
-                    <div class="underline"></div>                   
+                    <div class="hero-underline"></div>                   
             </div>
         </div>
            
@@ -275,8 +285,9 @@
             </div>
 
             <div class="section-img about-us-img">
-                <!-- <img src="img/cubeta.jpg" alt=""> -->
-                <div class="transparencia"></div>  
+                <div class="owl-carousel owl-theme carousel-home">
+                    <img src="img/cubeta-2.jpg" alt="" width="100%">
+                </div> 
             </div>                 
         </section>
 
@@ -286,7 +297,6 @@
                     <h2>Investment Focus</h2>
                     <p>Our investment strategy is focused on businesses in special situations, such as strategic refocus of the seller, insufficient earnings or a lack of successors.
                     </p>
-                    <p>Learn about our investment criteria</p>
                 </div>
                 <div class="button-container">
                     <p>Check our investment criteria</p>
@@ -301,13 +311,14 @@
                 <div class="container">
                     <!-- <div class="transparencia"></div> -->
                     <div class="owl-carousel owl-theme carousel-home">
-                        <img src="img/foto-home-prueba-2.jpg" alt="" width="100%">
-                        <img src="img/foto-home-prueba-5.jpg" alt="" width="100%">
-                        <img src="img/foto-home-prueba-1.jpg" alt="" width="100%">
-                        <img src="img/foto-home-prueba-6.jpg" alt="" width="100%">
+                        <img src="img/Nueva carpeta/25.jpg" alt="" width="100%">
+                        <img src="img/Nueva carpeta/37.jpg" alt="" width="100%">
+                        <img src="img/Nueva carpeta/21.jpg" alt="" width="100%">
+                        <img src="img/Nueva carpeta/28.jpg" alt="" width="100%">
+                        <img src="img/Nueva carpeta/19.jpg" alt="" width="100%">
+                        <img src="img/Nueva carpeta/42.jpg" alt="" width="100%">
+                        <img src="img/rye.jpg" alt="" width="100%">
                         <img src="img/hornos.jpg" alt="" width="100%">
-                        <img src="img/foto-home-prueba-3.jpg" alt="" width="100%">
-                        <img src="img/foto-home-prueba-4.jpg" alt="" width="100%">
                        
                     </div>
                 </div>
@@ -334,20 +345,13 @@
                 <div class="container">
                     <!-- <div class="transparencia"></div> -->
                     <div class="owl-carousel owl-theme carousel-home">
-                        <img src="img/team3.jpg" alt="" width="100%"> 
-                        <img src="img/hornos.jpg" alt="" width="100%">
-                        <img src="img/foto-home-prueba-1.jpg" alt="" width="100%">
-                        <img src="img/foto-home-prueba-2.jpg" alt="" width="100%">
-                        <img src="img/foto-home-prueba-3.jpg" alt="" width="100%">
-                        <img src="img/foto-home-prueba-4.jpg" alt="" width="100%">
-                        <img src="img/foto-home-prueba-5.jpg" alt="" width="100%">
-                        <img src="img/foto-home-prueba-6.jpg" alt="" width="100%">
+                        <img src="img/foto-home-prueba-9.jpg" alt="" width="100%">
                        
                     </div>
                 </div>
             </div>   
         </section>
-        <section class="contact">
+        <section class="contact light-banner">
             <div class="contact-text">
                 <p>Do you have an opportunnity that meets our <a href="">investment criteria</a>?</p>
                 <a href="contact.html" class="button">Contact us</a>
@@ -377,6 +381,7 @@
                     <li><a href="">Terms of Use</a></li>
                     <li><a href="">Privacy Policy</a></li>
                     <li><a href="">Jobs at IIC</a></li>
+                    <li class="hidden-footer"><a href="">ola</a></li>
                 </ul>
             </nav>
             
@@ -385,7 +390,31 @@
 
     <script src="js/jquery.min.js"></script>
     <script src="owlcarousel/owl.carousel.min.js"></script>
+    <script src="owlcarousel/owl.setup.js"></script>
     <script src="js/scripts.js"></script>
+    <script>
+        let barsContainer = document.querySelector('.hero__bars');
+
+
+        for (let i=0 ; i <=170 ; i++) {
+            let bar = document.createElement('div');
+            bar.classList.add('hero__bar');
+            barsContainer.appendChild(bar);
+            bar.style.height = `${i*(i/20)}px`;
+            let barHeight = bar.style.height;
+            bar.style.marginBottom = `-${barHeight}`;
+            bar.style.transitionDelay = `${i / 100}s`;
+            let halfHeight = parseFloat(barHeight)/2;
+            
+        requestAnimationFrame(() => {
+            // second state
+            bar.style.transform = `translateY(-${halfHeight}px)  rotate(-${i-10}deg)`;
+
+            })
+
+        
+        }
+    </script>
 
 </body>
 </html>

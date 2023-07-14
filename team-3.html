@@ -26,9 +26,18 @@
                         <li class="sub-menu-item"><a href="about-us-2.html">Option 2</a></li>
                         <li class="sub-menu-item"><a href="about-us-3.html">Option 3</a></li>
                         <li class="sub-menu-item"><a href="about-us-4.html">Option 4</a></li>
+                        <li class="sub-menu-item"><a href="about-us-5.html">Option 5</a></li>
+                        <li class="sub-menu-item"><a href="about-us-6.html">Option 6</a></li>
                     </ul>
                 </li>
-                <li class="menu-item"><a href="investment.html">INVESTMENT FOCUS</a><div class="nav-underline"></div></li>
+                <li class="menu-item">
+                    <a href="investment.html">INVESTMENT FOCUS</a>
+                    <img src="img/chevron-down.svg" alt="" class="menu-chevron">
+                    <div class="nav-underline"></div>
+                    <ul class="sub-menu">
+                        <li class="sub-menu-item"><a href="investment-1.html">Option 1</a></li>
+                    </ul>
+                </li>
                 <li class="menu-item"><a href="#">CASE STUDIES</a><div class="nav-underline"></div></li>
                 <li class="menu-item">
                     <a href="team.html">MANAGEMENT TEAM</a>
@@ -39,9 +48,21 @@
                         <li class="sub-menu-item"><a href="team-2.html">Option 2</a></li>
                         <li class="sub-menu-item"><a href="team-3.html">Option 3</a></li>
                         <li class="sub-menu-item"><a href="team-4.html">Option 4</a></li>
+                        <li class="sub-menu-item"><a href="team-5.html">Option 5</a></li>
                     </ul>
                 </li>
                 <li class="menu-item"><a href="contact.html">CONTACT</a><div class="nav-underline"></div></li>
+            </ul>
+        </nav>
+        <nav class="hamburguer-nav">
+            <i class="bi bi-list hamburguer-icon"></i>
+            <ul>
+                <i class="bi bi-x-lg"></i>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="about-us.html">ABOUT US</a></li>
+                <li><a href="investment.html">INVESTMENT FOCUS</a></li>
+                <li><a href="team.html">MANAGEMENT TEAM</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
             </ul>
         </nav>
         <div class="language-selector">
@@ -52,16 +73,15 @@
             </ul>
         </div>
     </header>
-    <main id="team-3-main">
+    <main id="team-3-main team-iteration">
         <section>
             <div class="section-header">
                 <h1>Management team</h1>                
             </div>
             <div class="team-content">
-                <!-- <div class="production-note">
-                    <p><strong>Production note:  </strong>This effect doesn't look quite right. However the better the quality of the picture (in terms of pixels per inch), the most defined it looks. <span>Example <img src="img/prueba-ef2.jpg" alt=""></span> </p>
-                </div> -->
-                <p class="team-intro">The Iberia Industry Capital Group is led by a team of international M&A, turnaround and restructuring experts.</p>
+                <div class="light-banner">
+                    <p class="team-intro">The Iberia Industry Capital Group is led by a team of international M&A, turnaround and restructuring experts.</p>
+                </div>
                 <div class="managers">
                     
                     <div class="manager">
@@ -130,12 +150,12 @@
             </div>
 
         </section>
-        <section class="jobs">
-            <div class="jobs-text">
-                <p>Are you interested in working with us? IIC is always interested to speak with exceptional Restructuring Managers</p>
-                <a href="#" class="button">Jobs at IIC</a>
+        <section class="jobs light-banner">
+            <div class="jobs-text"> 
+                <span>Are you interested in working with us?</span>
+                <p> IIC is always interested to speak with exceptional Restructuring Managers</p>
             </div>
-        
+            <a href="#" class="button">Jobs at IIC</a>
         </section>
     </main>
     <footer>
@@ -158,6 +178,7 @@
                     <li><a href="">Terms of Use</a></li>
                     <li><a href="">Privacy Policy</a></li>
                     <li><a href="">Jobs at IIC</a></li>
+                    <li class="hidden-footer"><a href="">ola</a></li>
                 </ul>
             </nav>
             
