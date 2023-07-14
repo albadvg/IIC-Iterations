@@ -1,10 +1,15 @@
 :root{
-    --orange: #ff8455;
+    --secondary1: #ff8455;
+    --secondary2: #f6e6c7;
+    /* --secondary2: #f0e5d4; */
+    --tertiary:rgb(240, 236, 233);
+
     --darkBlue: #1c2e3a;
     --lightBlue:  #c0d6e8;
     --aqua: #31526699 ;
     --iconColorLight : #8093a2;
     --lightBrown: #e8dec0;
+    /* rgb(240, 239, 233) */
 }
 
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
@@ -13,7 +18,7 @@
 
 /* PRODUCTION NOTES */
 .light-banner{
-    background-color: rgb(240, 239, 233);
+    background-color:var(--tertiary) ;
     padding: 50px;
     width: 100%;
     font-size: 18px;
@@ -36,7 +41,9 @@
 .production-note span:hover img{
     display: block;
 }
-
+.bold{
+    font-weight: bold;
+}
 html {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -205,7 +212,7 @@ li.sub-menu-item:hover a{
     left: -70px;
     z-index: 9;
     margin: 0;
-    border: 2px solid #ffcebb;
+    border: 2px solid var(--secondary2);
     border-radius: 3px;
     padding: 0;
     height: 42px;
@@ -305,28 +312,6 @@ li.sub-menu-item:hover a{
 }
 
 /************HERO*******************/
-.hero__bars{
-    height: 100%;
-    width: 80%;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    overflow: hidden;
-    margin-left: auto;
-}
-.hero__bar{
-    width: .5px;
-    border-radius: 5px;
-    background-color: var(--lightBlue);
-    transition : transform .5s ease;
-}
-@media screen and (max-width:900px) {
-    .hero__bars{
-        width: 180%;
-        margin-left: -170px;
-    }   
-}
-/* ata aqui proba */
 .hero-container{
     width: 100%;
     height: 70vh;
@@ -337,9 +322,6 @@ li.sub-menu-item:hover a{
     background-color: var(--darkBlue);
 }
 
-.bars-container .bar{
-    background-color: #1c2e3a;
-}
 #icono-hero{
     width: 380px;
     position: absolute;
@@ -419,7 +401,7 @@ li.sub-menu-item:hover a{
     animation-delay: .5s;
 }
 .hero-text-wrapper p:nth-child(4){
-    color: var(--orange);
+    color: var(--secondary1);
     font-weight: 800;
     margin-left: 0px;
     width: 400px;
@@ -431,7 +413,7 @@ li.sub-menu-item:hover a{
 .hero-underline{
     height: 10px;
     width: 0%;
-    background-color: var(--orange) ;
+    background-color: var(--secondary1) ;
     margin-top: 10px;
     margin-left: -60px;
     animation: underlineAnimation 2s ease;
@@ -783,7 +765,7 @@ footer a{
     background-color: white;
 }
 .about-us-4 .about-underline{
-    background-color: var(--lightBrown);
+    background-color: var(--secondary2);
 }
 h1{
     color: white;
@@ -890,9 +872,10 @@ h1{
     background-position-y: 50%;
     background-size: 100%;
 }
-.investment-1 .section-header{
-    background-image: url(../img/banner-investment2.jpg);
-    background-position-y: 20%;
+.investment-iteration .section-header{
+    background-image: url(../img/banner-investment4.jpg);
+    background-position: 20% 70%;
+    background-size: 110%;
 }
 .investment-content{
     display: flex;
@@ -923,14 +906,20 @@ h1{
     position: relative;
 }
 .investment-criteria .bi{
-    color: var(--orange);
+    color: var(--secondary1);
     font-size: 1.1rem;
     position: absolute;
     top:0%;
     left: -40px;
 }
-.investment-iteration .investment-criteria .bi{
-    color: var(--lightBrown);
+.investment-1-main .investment-criteria .bi{
+    color: var(--secondary2);
+    font-size: .7rem;
+    top: 4%;
+}
+.investment-2-main .investment-criteria .bi{
+    top: 4%;
+    color: var(--lightBlue);
 }
 @media screen and (max-width:1200px){
     .investment-intro{
@@ -973,7 +962,7 @@ h1{
     position: relative;
 }
 
-.investment-1 .investment-contact{
+.investment-iteration .investment-contact{
     background-image: url(../img/laptop11.jpg);
 }
 
@@ -996,12 +985,19 @@ h1{
 }
 .investment-contact .button-2{
     border:2px solid white;
-
 }
 .investment-contact .button-2 i{
     color: white;
 }
+.investment-iteration .investment-contact p,
+.investment-iteration .investment-contact .button-container p,
+.investment-iteration .investment-contact .button-2 i{
+    color: var(--darkBlue);
+}
 
+.investment-iteration .investment-contact .button-2{
+    border: 2px solid var(--darkBlue);
+}
 @media screen and (max-width:900px) {
     .investment-contact{
         flex-direction: column;
@@ -1038,7 +1034,7 @@ h1{
     padding: 60px 0 30px 0;
 }
 .team-iteration .team-intro{
-    max-width: 570px;
+    max-width: 700px;
     padding: 50px 0 0 0 ;
     font-size: 24px;
 }
@@ -1054,59 +1050,106 @@ h1{
     display: flex;
     justify-content: center;
     align-items: flex-end;
+    position: relative;
+    margin-left: -30px;
 }
 .manager:not(:last-of-type){
     margin-bottom: 100px;
-    margin-left: -30px;
+    
 }
 .manager-text{
     width: 680px;
 }
-.team-1-main .manager-text{
-    width: 570px;
+.team-iteration .manager-text{
+    width: 540px;
 }
-.manager img,
-.dummy-img{
+.manager img{
     width: 170px;
     margin-right: 50px;
-    ;
+}
+.team-1-main .manager img{
+    align-self: center;
+}
+.team-2-main .manager img{
+    margin-right: 38px;
+}
+.team-2-main .manager-position{
+    padding-bottom: 15px;
+    border-bottom: 3px solid var(--secondary2);
+}
+.avatar-circle{
+    height: 10px;
+    width: 10px;
+    background-color: var(--secondary2);
+    border-radius: 50%;
+    position: absolute;
+    top: 12px;
+    left: -56px;
+    z-index: -1;
+    transition: transform 1s ease;
+}
+.avatar-circle-2{
+    height: 10px;
+    width: 10px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 12px;
+    left: -56px;
+    z-index: -2;
+}
+.line-avatars{
+    height: calc(100% - 150px);
+    width: 2px;
+    position: absolute;
+    top: 83px;
+    left: -12px;
+    z-index: -3;
+    background-color: var(--secondary2);
+    padding-bottom: 80px;
+}
+.team-4-main .avatar-circle,
+.team-4-main .line-avatars{
+    background-color: var(--lightBlue);
 }
 .manager .container{
     width: 170px;
     margin-right: 50px;
 }
-.team-iteration .manager .owl-nav{
-    width: 140%;
-    margin-left: -30px;
-}
-.team-iteration .manager .owl-dots{
-    margin-bottom: -40px;
-    margin-top: 20px;
-}
-.team-iteration .manager .owl-prev span,
-.team-iteration .manager .owl-next span{
-    color: rgb(219, 218, 217);
-}
-.dummy-img{
-    background-color: rgb(240, 239, 233)    ;
-    height: 210px;
-}
+
 
 .manager-name{
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 800;
     color: var(--darkBlue);
     margin-bottom: 0;
     margin-top: 0;
 }
+.team-3-main .manager-name{
+    font-size: 24px;
+}
 .manager-position{
     font-weight: 400;
-    margin-top: 5px;
+    margin-top: 2px;
     color: var(--darkBlue);
+    font-size: 17px;
 }
 .manager-info{
     left: 0;
     margin-bottom: 0;
+}
+
+.team-iteration .manager img{
+    width: 150px;
+}
+.team-2-main .manager img:not(.dummy-img){
+    align-self: flex-start;
+    width: 120px;
+    margin-top: -10px;
+}
+.dummy-img{
+    align-self: flex-start;
+    width: 120px;
 }
 @media screen and (max-width:900px) {
     .managers{
@@ -1127,6 +1170,7 @@ h1{
     .manager-name{
         font-size:24px ;
     }
+
     .manager-position{
         font-size: 20px;
     }
@@ -1135,66 +1179,18 @@ h1{
         margin: auto;
     }
 }
-.team-1-main .section-header,
-#team-2-main .section-header,
-#team-3-main .section-header,
-#team-4-main .section-header,
-#team-5-main .section-header{
+.team-iteration .section-header{
     background-image: url(../img/fondo-team-2.jpg);
 }
-.team-1-main h1,
-#team-2-main h1,
-#team-3-main h1,
-#team-4-main h1,
-#team-5-main h1{
+.team-2-main .section-header{
+    background-position-y: 51% ;
+}
+.team-iteration h1{
     color: white;
 }
 
-#team-2-main .manager,
-#team-3-main .manager{
-    background-color: #e7ecee;
-    padding: 70px;
-}
-#team-4-main .manager img{
-    border-radius: 50%;
-    height: 60px;
-    width: 60px;
-    object-fit: cover;
-    object-position: 40% 0 ;
-    border: 3px solid var(--darkBlue);
-}
-#team-2-main .manager-text{
-    width: 560px;
-}
-#team-2-main .manager-name{
-    font-size: 25px;
-}
-#team-2-main .manager-position{
-    font-size: 18px;
-}
-#team-3-main .managers{
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 50px;
-    padding: 70px 120px;
-}
-#team-3-main .manager{
-    min-width: 300px;
-    width: calc(50% - 25px);
-    margin-bottom: 0;
-}
-#team-4-main .manager-info{
-    margin-top: 25px;
-}
-#team-5-main .manager img{
-    border: 3px solid var(--darkBlue);
-    width: 0;
-}
-#team-5-main .manager-name,
-#team-5-main .manager-position{
 
 
-}
 
 /******CONTACT*******/
 
@@ -1202,7 +1198,9 @@ h1{
     background-image: url(../img/engranaxes3azul2.png);
     background-position-y: 47%;
 }
-
+.contact-iteration .section-header{
+    background-image: url(../img/banner-contact.jpg);
+}
 .contact-content{
     display: flex;
     padding: 70px;

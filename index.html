@@ -27,10 +27,9 @@
                     <img src="img/chevron-down.svg" alt="" class="menu-chevron">
                     <div class="nav-underline"></div>
                     <ul class="sub-menu">
-                        <li class="sub-menu-item"><a href="about-us-1.html">Option 1</a></li>
-                        <li class="sub-menu-item"><a href="about-us-2.html">Option 2</a></li>
-                        <li class="sub-menu-item"><a href="about-us-3.html">Option 3</a></li>
-                        <li class="sub-menu-item"><a href="about-us-4.html">Option 4</a></li>
+                        <li class="sub-menu-item"><a href="about-us-1.html">Variation 1</a></li>
+                        <li class="sub-menu-item"><a href="about-us-2.html">Variation 2</a></li>
+                        <li class="sub-menu-item"><a href="about-us-3.html">Variation 3</a></li>
                     </ul>
                 </li>
                 <li class="menu-item">
@@ -38,7 +37,8 @@
                     <img src="img/chevron-down.svg" alt="" class="menu-chevron">
                     <div class="nav-underline"></div>
                     <ul class="sub-menu">
-                        <li class="sub-menu-item"><a href="investment-1.html">Option 1</a></li>
+                        <li class="sub-menu-item"><a href="investment-1.html">Variation 1</a></li>
+                        <li class="sub-menu-item"><a href="investment-2.html">Variation 2</a></li>
                     </ul>
                 </li>
                 <li class="menu-item"><a href="#">CASE STUDIES</a><div class="nav-underline"></div></li>
@@ -47,11 +47,21 @@
                     <img src="img/chevron-down.svg" alt="" class="menu-chevron">
                     <div class="nav-underline"></div>
                     <ul class="sub-menu">
-                        <li class="sub-menu-item"><a href="team-1.html">Option 1</a></li>
+                        <li class="sub-menu-item"><a href="team-1.html">Variation 1</a></li>
+                        <li class="sub-menu-item"><a href="team-2.html">Variation 2</a></li>
+                        <li class="sub-menu-item"><a href="team-3.html">Variation 3</a></li>
+                        <li class="sub-menu-item"><a href="team-4.html">Variation 4</a></li>
                         
                     </ul>
                 </li>
-                <li class="menu-item"><a href="contact.html">CONTACT</a><div class="nav-underline"></div></li>
+                <li class="menu-item">
+                    <a href="contact.html">CONTACT</a>
+                    <img src="img/chevron-down.svg" alt="" class="menu-chevron">              
+                    <div class="nav-underline"></div>
+                    <ul class="sub-menu">
+                        <li class="sub-menu-item"><a href="contact-1.html">Variation 1</a></li>
+                    </ul>
+                </li>
             </ul>
         </nav>
         <nav class="hamburguer-nav">
@@ -75,7 +85,7 @@
     </header>
     <div class="hero-container">
         <img src="img/icono-vector-ok.svg" alt="" id="icono-hero">
-        <!-- <div class="bars-wrapper">
+        <div class="bars-wrapper">
             <div class="bar" id="bar-1"></div>
             <div class="bar" id="bar-2"></div>
             <div class="bar" id="bar-3"></div>
@@ -247,7 +257,7 @@
             <div class="bar" id="bar-169"></div>
             <div class="bar" id="bar-170"></div>
 
-        </div> bars wrapper  -->
+        </div> 
 
         <div class="hero__bars"></div>
         <div class="hero-text-container">
@@ -388,27 +398,33 @@
     <script src="owlcarousel/owl.setup.js"></script>
     <script src="js/scripts.js"></script>
     <script>
-        let barsContainer = document.querySelector('.hero__bars');
 
+        let bars = document.querySelectorAll('.bar');
 
-        for (let i=0 ; i <=170 ; i++) {
-            let bar = document.createElement('div');
-            bar.classList.add('hero__bar');
-            barsContainer.appendChild(bar);
-            bar.style.height = `${i*(i/20)}px`;
-            let barHeight = bar.style.height;
-            bar.style.marginBottom = `-${barHeight}`;
-            bar.style.transitionDelay = `${i / 100}s`;
+        function animation2(bar , height) {
+            bar.style.transform = `translateY(-${height}px)  rotate(-${i-10}deg) `;
+        };
+
+        for (i = 0 ; i<bars.length; i++){
+            bars[i].style.height = `${i*(i/20)}px`;
+            let barHeight = bars[i].style.height;
+            bars[i].style.marginBottom = `-${barHeight}`;
+            bars[i].style.transition = `transform .5s ease`;
+            bars[i].style.transitionDelay = `${i / 100}s`;
             let halfHeight = parseFloat(barHeight)/2;
-            
-        requestAnimationFrame(() => {
-            // second state
-            bar.style.transform = `translateY(-${halfHeight}px)  rotate(-${i-10}deg)`;
-
-            })
-
-        
+            animation2(bars[i], halfHeight);
         }
+
+        // for (i = 0 ; i<bars2.length; i++){
+        //     bars2[i].style.height = `${i*(i/20)}px`;
+        //     let barHeight = bars2[i].style.height;
+        //     bars2[i].style.marginBottom = `-${barHeight}`;
+        //     bars2[i].style.transition = `transform .5s ease`;
+        //     bars2[i].style.transitionDelay = `${i / 100}s`;
+        //     let halfHeight = parseFloat(barHeight)/2;
+        //     animation2(bars2[i], halfHeight);
+        // }
+
     </script>
 
 </body>

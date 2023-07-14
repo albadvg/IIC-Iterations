@@ -1,32 +1,4 @@
-// let bars = document.querySelectorAll('.bar');
 
-// function animation2(bar , height) {
-//     bar.style.transform = `translateY(-${height}px)  rotate(-${i-10}deg) `;
-// };
-
-// for (i = 0 ; i<bars.length; i++){
-//     bars[i].style.height = `${i*(i/20)}px`;
-//     let barHeight = bars[i].style.height;
-//     bars[i].style.marginBottom = `-${barHeight}`;
-//     bars[i].style.transition = `transform .5s ease`;
-//     bars[i].style.transitionDelay = `${i / 100}s`;
-//     let halfHeight = parseFloat(barHeight)/2;
-//     animation2(bars[i], halfHeight);
-// }
-
-// let bars2 = document.querySelectorAll('.bar2');
-
-
-// for (i = 0 ; i<bars2.length; i++){
-//     bars2[i].style.height = `${i*(i/20)}px`;
-//     let barHeight = bars2[i].style.height;
-//     bars2[i].style.marginBottom = `-${barHeight}`;
-//     bars2[i].style.transition = `transform .5s ease`;
-//     bars2[i].style.transitionDelay = `${i / 100}s`;
-//     let halfHeight = parseFloat(barHeight)/2;
-//     animation2(bars2[i], halfHeight);
-// }
-//HERO BARS ANIMATION
 
 
 /////////////
@@ -100,3 +72,44 @@ function slideInVisible(entries) {
 
 const slideInObserver = new IntersectionObserver(slideInVisible);
 slideInElements.forEach(element => slideInObserver.observe(element));
+
+//TEAM AVATARS
+line1 = $('#line1');
+avatar1 = $('#avatar-1');
+avatar2 = $('#avatar-2');
+
+var position1 = avatar1.position();
+var position2 = avatar2.position();
+
+line1
+  .attr('x1', position1.left)
+  .attr('y1', position1.top)
+  .attr('x2', position2.left)
+  .attr('y2', position2.top);
+
+  //avatar changes
+
+  let avatars = document.querySelectorAll('.avatar-circle');
+
+  function isCenterViewport(element){
+    const rect = element.getBoundingClientRect();
+    return (
+        rect.top >= 200 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight -200 || document.documentElement.clientHeight - 200) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+  }
+
+  function avatarColor() {
+    avatars.forEach(avatar => {
+        if(isCenterViewport(avatar)){
+            avatar.style.transform = 'scale(3) translate(20px)';
+        } else {
+            avatar.style.transform = 'scale(1) translate(0)';
+
+        }
+    })
+  }
+  
+  window.addEventListener("scroll", avatarColor);
