@@ -1088,6 +1088,9 @@ h1{
     z-index: -1;
     transition: transform 1s ease;
 }
+#avatar-1{
+    transform: scale(3) translate(20px);
+}
 .avatar-circle-2{
     height: 10px;
     width: 10px;
