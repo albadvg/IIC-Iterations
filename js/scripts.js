@@ -1,6 +1,3 @@
-
-
-
 /////////////
 
 let burguerButton = document.querySelector('.hamburguer-icon');
@@ -24,7 +21,7 @@ function hideMenu() {
 
 
 
-//ABOUT US BLUE BARS
+//ABOUT US UNDERLINES
 let blueBars = document.querySelectorAll('.about-us-3 .about-underline');
 
 function blueUnderlineVisible(entries) {
@@ -64,8 +61,15 @@ let slideInElements = document.querySelectorAll('.spread-apart');
 function slideInVisible(entries) {
     entries.map((entry) => {
         if(entry.isIntersecting) {
-            entry.target.style.animation = "spreadAnimation 2s ease";
-            entry.target.style.animationFillMode = "forwards";
+            if(window.matchMedia("(max-width: 900px)")){
+                entry.target.style.animation = "slideInAnimation 2s ease";
+                entry.target.style.animationFillMode = "forwards"; 
+                
+            } else {
+                entry.target.style.animation = "spreadAnimation 2s ease";
+                entry.target.style.animationFillMode = "forwards";  
+            }
+            
         }
     });
 };

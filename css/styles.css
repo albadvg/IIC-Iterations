@@ -115,7 +115,7 @@ header{
 }
 
 @keyframes slideInAnimation {
-    from{margin-left: -20px}
+    from{margin-left: -40px}
     to{margin-left:0};
 }
 @keyframes spreadAnimation {
@@ -424,8 +424,14 @@ li.sub-menu-item:hover a{
     from{margin-left: -60px; width: 0%;}
     to{margin-left: 0; width: 95%;}
 }
+
+@keyframes underlineAnimationMobile{
+    from{margin-left: -60px; width: 0%;}
+    to{margin-left: 0; width: 100%;}
+}
 @media screen and (max-width:900px) {
     .hero-text-container{
+        left: 0;
         width: 100%;
         padding-left: 75px;
         display: flex;
@@ -439,6 +445,12 @@ li.sub-menu-item:hover a{
         display: flex;
         flex-direction: column;
         align-items: center;
+    }
+
+    .hero-underline{
+        animation: underlineAnimationMobile 2s ease;
+        animation-delay: .5s;
+        animation-fill-mode: forwards;
     }
 }
 
@@ -529,9 +541,9 @@ section.investment-focus .section-text{
 }
 
 @media screen and (max-width: 900px) {
-    .home-page section{
+    .home-page section:not(.contact){
         flex-direction: column;
-        max-height: unset;
+        height: unset;
     }
     .home-page .section-text{
         width: 100%;
@@ -626,6 +638,7 @@ section.jobs{
     position: relative;
     padding: 20px 0 50px 0  ;
 }
+
 section.contact{
     padding: 50px 0;
 }
@@ -761,12 +774,21 @@ footer a{
     /* background-position: 0 -530px; */
     background-position: 0 -480px;
 }
+@media screen and (max-width: 900px) {
+    .about-us-1 .section-header{
+        background-position: 0 0;
+    }
+    .about-us-3 .section-header{
+        background-position: 0 -80px;
+    }
+}
 .about-us-iteration section{
     background-color: white;
 }
 .about-us-4 .about-underline{
     background-color: var(--secondary2);
 }
+
 h1{
     color: white;
     font-size: 40px;
@@ -811,8 +833,18 @@ h1{
     align-items: center;
     margin-bottom: 60px;
 }
+@media screen and (max-width: 900px){
+    .txt-icon{
+        flex-direction: column;
+        margin-bottom: 20px;
+        gap: 65px;
+    }
+}
 .txt-icon img{
     width: 150px;
+}
+.txt-icon:first-of-type img{
+    margin-top: -140px;
 }
 .about-us-3 .txt-icon {
     padding-bottom: 50px;
@@ -849,6 +881,26 @@ h1{
     position: absolute;
     margin-top: -120px;
 }
+@media screen and (max-width:900px) {
+    .about-us-4 .txt.first-text{
+        margin-top: 85px;
+    }
+    .about-us-4 .txt strong{
+        margin-top: -95px;
+        font-size: 32px;
+    }
+    .about-us-4 .txt-icon:first-of-type{
+        margin-top: 0px;
+    }
+    .txt-icon:first-of-type img{
+        margin-top: 0;
+    }
+
+    .about-us-3 .txt-icon:first-of-type img,
+    .about-us-3 .txt-icon:nth-of-type(3) img{
+        order: -1;
+    }
+}
 .about-us-3 span{
     font-weight: 600;
     color: var(--darkBlue);
@@ -859,7 +911,7 @@ h1{
     width: 0%;
     background-color: var(--lightBlue) ;
     margin-top: 10px;
-    margin-left: -60px;
+    /* margin-left: -60px; */
 
 }
 @keyframes aboutUnderlineAnimation{
@@ -912,6 +964,8 @@ h1{
     top:0%;
     left: -40px;
 }
+
+
 .investment-1-main .investment-criteria .bi{
     color: var(--secondary2);
     font-size: .7rem;
@@ -951,6 +1005,10 @@ h1{
     .investment-criteria .bi{
         left: -30px;
     }
+    .investment-iteration .investment-criteira .bi{
+        left: -24px;
+    }
+    
 }
 .investment-contact{
     background-image: url(../img/laptop2.png);
@@ -1051,6 +1109,9 @@ h1{
     justify-content: center;
     align-items: flex-end;
     position: relative;
+}
+
+.team-3-main .manager{
     margin-left: -30px;
 }
 .manager:not(:last-of-type){
@@ -1177,10 +1238,12 @@ h1{
     .manager-position{
         font-size: 20px;
     }
-    .manager-text{
+    .manager-text,
+    .team-iteration .manager-text{
         width: 80vw;
-        margin: auto;
+        margin: 0 auto;
     }
+    .team-iteration .manager-text
 }
 .team-iteration .section-header{
     background-image: url(../img/fondo-team-2.jpg);
