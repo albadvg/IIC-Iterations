@@ -646,6 +646,11 @@ section.contact{
     padding: 50px 0 35px 0;
     gap: 20px;
 }
+@media screen and (max-width:900px) {
+    .team-iteration .jobs{
+        flex-direction: column;
+    }
+}
 section.contact .contact-text,
 section.jobs .jobs-text{
     width: 100%;
@@ -654,16 +659,15 @@ section.jobs .jobs-text{
     align-items: center;
 }
 
-.team-iteration .jobs-text {
-    display: flex;
+.team-iteration .jobs .jobs-text {
     flex-direction: column;
+    align-items: flex-start;
     max-width: 500px;
 }
 .team-iteration .jobs-text span{
     font-weight: 600;
     font-size: 20px;
     color: var(--darkBlue);
-    margin-left: -100px;
 }
 section.contact p>a,
 section.jobs p >a{
@@ -1121,6 +1125,11 @@ h1{
 .manager-text{
     width: 680px;
 }
+@media screen and (max-width:900px) {
+    .team-3-main .manager-text{
+        padding-left: 20px;
+    }
+}
 .team-iteration .manager-text{
     width: 540px;
 }
@@ -1133,6 +1142,12 @@ h1{
 }
 .team-2-main .manager img{
     margin-right: 38px;
+}
+@media screen and (max-width:900px) {
+    .team-2-main .manager img{
+        margin-right: 0;
+        margin: 0 auto;
+    }
 }
 .team-2-main .manager-position{
     padding-bottom: 15px;
@@ -1152,6 +1167,11 @@ h1{
 #avatar-1{
     transform: scale(3) translate(20px);
 }
+@media screen and (max-width: 900px){
+    #avatar-1{
+        transform: scale(3) translate(10px);
+    }
+}
 .avatar-circle-2{
     height: 10px;
     width: 10px;
@@ -1162,6 +1182,12 @@ h1{
     left: -56px;
     z-index: -2;
 }
+@media screen and (max-width: 900px) {
+    .avatar-circle-2,
+    .avatar-circle{
+        left: -8px ;
+    }
+}
 .line-avatars{
     height: calc(100% - 150px);
     width: 2px;
@@ -1171,6 +1197,11 @@ h1{
     z-index: -3;
     background-color: var(--secondary2);
     padding-bottom: 80px;
+}
+@media screen and (max-width: 900px){
+    .line-avatars{
+        left: 36px;
+    }
 }
 .team-4-main .avatar-circle,
 .team-4-main .line-avatars{
@@ -1230,6 +1261,10 @@ h1{
     .manager-name,
     .manager-position{
         text-align: center;
+    }
+    .team-3-main .manager-position,
+    .team-3-main .manager-name{
+        text-align: left;
     }
     .manager-name{
         font-size:24px ;

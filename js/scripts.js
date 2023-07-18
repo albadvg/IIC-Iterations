@@ -78,20 +78,7 @@ const slideInObserver = new IntersectionObserver(slideInVisible);
 slideInElements.forEach(element => slideInObserver.observe(element));
 
 // //TEAM AVATARS
-// line1 = $('#line1');
-// avatar1 = $('#avatar-1');
-// avatar2 = $('#avatar-2');
 
-// var position1 = avatar1.position();
-// var position2 = avatar2.position();
-
-// line1
-//   .attr('x1', position1.left)
-//   .attr('y1', position1.top)
-//   .attr('x2', position2.left)
-//   .attr('y2', position2.top);
-
-  //avatar changes
 
   let avatars = document.querySelectorAll('.avatar-circle');
   let marginPercentage = (20 * window.innerHeight) / 100;   
@@ -111,7 +98,12 @@ console.log(isCenterViewport)
   function avatarPosition() {
     avatars.forEach(avatar => {
         if(isCenterViewport(avatar)){
-            avatar.style.transform = 'scale(3) translate(20px)';
+            if(window.matchMedia("max-width: 900px")){
+                avatar.style.transform = 'scale(3) translate(10px)';
+
+            } else {
+                avatar.style.transform = 'scale(3) translate(20px)';
+            }
         } else {
             avatar.style.transform = 'scale(1) translate(0)';
 
