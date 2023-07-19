@@ -1336,7 +1336,9 @@ h1{
 }
 .team-2-main .manager img:not(.dummy-img){
     margin-top: -10px;
-
+}
+.team-2-main .jeff img{
+    padding-right: 8px;
 }
 .dummy-img{
     align-self: flex-start;
