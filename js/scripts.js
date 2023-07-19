@@ -1,4 +1,4 @@
-/////////////
+//MOBILE MENU//////////////////
 
 let burguerButton = document.querySelector('.hamburguer-icon');
 let closeButton = document.querySelector('.hamburguer-nav .bi-x-lg');
@@ -21,8 +21,8 @@ function hideMenu() {
 
 
 
-//ABOUT US UNDERLINES
-let blueBars = document.querySelectorAll('.about-us-3 .about-underline');
+//ABOUT US UNDERLINES////////////////
+let blueBars = document.querySelectorAll('.about-2-main .about-underline');
 
 function blueUnderlineVisible(entries) {
     entries.map((entry) => {
@@ -98,15 +98,16 @@ console.log(isCenterViewport)
   function avatarPosition() {
     avatars.forEach(avatar => {
         if(isCenterViewport(avatar)){
-            if(window.matchMedia("max-width: 900px")){
+            if(window.matchMedia("(max-width: 900px)").matches){
                 avatar.style.transform = 'scale(3) translate(10px)';
-
+                console.log("menor que 900")
             } else {
                 avatar.style.transform = 'scale(3) translate(20px)';
+                console.log("maior que 900")
             }
         } else {
             avatar.style.transform = 'scale(1) translate(0)';
-
+            console.log("fora de vista")
         }
     })
   }

@@ -153,16 +153,24 @@ nav li:hover .nav-underline{
 
 
 ul.sub-menu{
+    width: 100%;
+    padding-left: 0;
+    flex-direction: column;
+    overflow: hidden;
+    transition: height .5s ease;
+}
+.desktop-nav ul.sub-menu{
     position: absolute;
     left: 0;
     top: 60px;
     z-index: 999;
-    width: 100%;
-    padding-left: 0;
-    flex-direction: column;
     height: 0;
-    overflow: hidden;
-    transition: height .5s ease;
+}
+.hamburguer-nav li ul.sub-menu{
+    display: none;
+}
+.hamburguer-nav li:hover ul.sub-menu{
+    display: block;
 }
 li.sub-menu-item{
     background-color: white;
@@ -171,7 +179,7 @@ li.sub-menu-item{
 li.sub-menu-item:hover a{
     font-weight: 400;
 }
-.menu-item:hover ul.sub-menu{
+.desktop-nav .menu-item:hover ul.sub-menu{
     height: 25rem; 
 }
 .menu-chevron{
@@ -189,6 +197,12 @@ li.sub-menu-item:hover a{
 
 .hamburguer-nav{
     display: none;   
+}
+.hamburguer-nav .sub-menu-item{
+    font-size: 14px;
+    border-bottom: none;
+    text-align: right;
+    padding: 20px 0 5px 0;
 }
 .hamburguer-icon{
     font-size: 40px;
@@ -240,7 +254,7 @@ li.sub-menu-item:hover a{
 .language-selector:hover img{
     transform: rotate(180deg);
 }
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1420px) {
     .desktop-nav{
         display: none;
     }
@@ -254,20 +268,20 @@ li.sub-menu-item:hover a{
         z-index: 999;
     }
 
-    .hamburguer-nav ul{
+    .hamburguer-nav ul:not(.sub-menu){
         flex-direction: column;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-start;
         background-color: white;
         position: absolute;
         right: -800px;
         top: -30px;
-        padding: 100px 0px;
+        padding: 50px 0px;
         transition: right 1s ease;
         z-index: 999;
         height: 100vh;
     }
-    .hamburguer-nav ul.show-menu{
+    .hamburguer-nav ul:not(.sub-menu).show-menu{
         right: -30px;
         top: -30px;
         transition: right 1s ease;  
@@ -279,11 +293,11 @@ li.sub-menu-item:hover a{
         transition: transform .5s ease;
         border-bottom: 1px solid var(--lightBlue);
         width: 60%;
-        padding:  30px 20px ;
+        padding: 20px 0 8px 0 ;
     }
-    .hamburguer-nav li:hover{
+    /* .hamburguer-nav li:hover{
         transform: scale(1.1);
-    }
+    } */
     .hamburguer-nav .bi-x-lg{
         position: absolute;
         top: 30px;
@@ -292,13 +306,13 @@ li.sub-menu-item:hover a{
         color: var(--darkBlue);
     }
     @media screen and (max-width:1200px) {
-        .hamburguer-nav ul{
-            width: 50vw;
+        .hamburguer-nav ul:not(.sub-menu){
+            width: 60vw;
         }
     }
     @media screen and (max-width: 511px) {
-        .hamburguer-nav ul{
-            width: 80vw;
+        .hamburguer-nav ul:not(.sub-menu){
+            width: 100vw;
         }
     }
     .language-selector {
@@ -649,6 +663,7 @@ section.contact{
 @media screen and (max-width:900px) {
     .team-iteration .jobs{
         flex-direction: column;
+        padding: 50px 35px 35px 35px;
     }
 }
 section.contact .contact-text,
@@ -694,6 +709,9 @@ section.jobs .button{
         flex-direction: column;
         align-items: center;
         text-align: center;
+    }
+    .team-iteration .jobs-text span{
+        margin: 0 auto;
     }
     section.contact .button,
     section.jobs .button{
@@ -765,32 +783,31 @@ footer a{
     background-image: url(../img/engranaxes2.png);
     background-position: 0 -100px;
 }
-.about-us-1 .section-header{
+.about-1-main .section-header{
     background-image: url(../img/banner-about.jpg);
     background-position: 0 -100px;
 }
-.about-us-2 .section-header{
+.about-2-main .section-header{
     background-image: url(../img/banner-train.jpg);
-    background-position: 0 -550px;
-}
-.about-us-3 .section-header{
-    background-image: url(../img/banner-train.jpg);
-    /* background-position: 0 -530px; */
     background-position: 0 -480px;
 }
+
 @media screen and (max-width: 900px) {
-    .about-us-1 .section-header{
+    .about-1-main .section-header{
         background-position: 0 0;
     }
-    .about-us-3 .section-header{
+    .about-2-main .section-header{
         background-position: 0 -80px;
     }
 }
 .about-us-iteration section{
     background-color: white;
 }
-.about-us-4 .about-underline{
+.about-2-main .about-underline{
     background-color: var(--secondary2);
+}
+.about-3-main .about-underline{
+    background-color: var(--lightBlue);
 }
 
 h1{
@@ -823,6 +840,9 @@ h1{
         flex-direction: column;
         padding: 60px 40px;
     }
+    .about-iteration .about-us-content{
+        gap: 0;
+    }
     .about-us-content p{
         width: 100%;
     }
@@ -841,71 +861,114 @@ h1{
     .txt-icon{
         flex-direction: column;
         margin-bottom: 20px;
-        gap: 65px;
+        gap: 50px;
     }
 }
-.txt-icon img{
+.txt-icon img:not(.iberia-svg-text){
     width: 150px;
 }
-.txt-icon:first-of-type img{
+/* .first-icon-about{
     margin-top: -140px;
+} */
+.about-3-main .txt-icon:first-of-type img{
+    margin-top: 0px;
 }
-.about-us-3 .txt-icon {
+.about-2-main .txt-icon {
     padding-bottom: 50px;
     margin-bottom: 0;
 }
-
-.about-us-3 .txt-icon .txt{
+@media screen and (max-width: 900px){
+    .about-2-main .txt-icon{
+        padding-bottom: 22px;
+    }
+}
+.about-2-main .txt-icon .txt{
     max-width: 360px;
 }
-.about-us-4 .txt-icon:first-of-type{
-    margin-top: 102px;
+.about-2-main .first-text > div:first-child{
+    display: inline-block;
+    width: 100%;
 }
-.about-us-3 .txt-icon p{
+.about-2-main .first-text svg{
+    width: 100%;
+}
+.about-2-main .first-text strong{
+    width: 100%;
+}
+.about-2-main .txt-icon:first-of-type{
+    /* margin-top: 102px; */
+}
+.about-3-main .txt-icon:first-of-type{
+    margin-top: 0px;
+}
+.about-2-main .txt-icon p{
     width: 100%;
     padding-bottom: 10px;
 }
-.about-us-2 .txt-icon img{
+/* .about-2-main .txt-icon img:not(.iberia-svg-text){
     width: 180px;
-}
+} */
 #ICC{
     font-size: 22px;
 }
 
-.about-us-3 strong{
-    font-weight: 700;
-    font-size: 20px;
-    color: var(--darkBlue);
+.iberia-svg-text{
+    width: 100%;
+    margin-bottom: 17px;
 }
-.about-us-4 .txt strong{
+.about-2-main .about-iberia-text{   
+    font-weight: 700;
+}
+.about-2-main .txt .about-iberia-text{
+    color: var(--darkBlue);
     font-family: 'EB Garamond', serif;
-    font-size: 40px;
+    font-size: 30px;
     font-weight: 600;
     display: inline-block;
-    position: absolute;
-    margin-top: -120px;
+    margin-bottom: 15px;
+    /* position: absolute;  */
+    /* margin-top: -120px;  */
+}
+.about-2-main .txt .about-iberia-text text{
+    font-family: 'EB Garamond', serif;
+
+}
+.about-3-main .txt strong{
+    font-weight: 700;
+    color: var(--darkBlue);
+    font-family: Montserrat;
+    font-size: 22px;
+    position: static;
+    line-height: 2;
 }
 @media screen and (max-width:900px) {
-    .about-us-4 .txt.first-text{
-        margin-top: 85px;
+    /* .about-2-main .txt.first-text{
+        margin-top: 105px;
     }
-    .about-us-4 .txt strong{
-        margin-top: -95px;
+    .about-3-main .txt.first-text{
+        margin-top: 0px;
+    } */
+    .about-2-main .txt strong{
+        /* margin-top: -85px; */
         font-size: 32px;
     }
-    .about-us-4 .txt-icon:first-of-type{
+    .about-3-main .txt strong{
+        font-size: 20px;
         margin-top: 0px;
     }
-    .txt-icon:first-of-type img{
+    .about-2-main .txt-icon:first-of-type{
+        margin-top: 15px;
+    }
+    .about-2-main .txt-icon:first-of-type img{
         margin-top: 0;
     }
 
-    .about-us-3 .txt-icon:first-of-type img,
-    .about-us-3 .txt-icon:nth-of-type(3) img{
+    .about-2-main .txt-icon:first-of-type img,
+    .about-2-main .txt-icon:nth-of-type(3) img{
         order: -1;
     }
 }
-.about-us-3 span{
+.about-2-main span{
     font-weight: 600;
     color: var(--darkBlue);
 
@@ -1009,7 +1072,7 @@ h1{
     .investment-criteria .bi{
         left: -30px;
     }
-    .investment-iteration .investment-criteira .bi{
+    .investment-iteration .investment-criteria .bi{
         left: -24px;
     }
     
@@ -1143,6 +1206,11 @@ h1{
 .team-2-main .manager img{
     margin-right: 38px;
 }
+.team-2-main .manager:first-child img,
+.team-2-main .manager:nth-child(5) img{
+    width: 110px;
+}
+
 @media screen and (max-width:900px) {
     .team-2-main .manager img{
         margin-right: 0;
@@ -1237,10 +1305,13 @@ h1{
 .team-iteration .manager img{
     width: 150px;
 }
-.team-2-main .manager img:not(.dummy-img){
-    align-self: flex-start;
+.team-2-main .manager img{
     width: 120px;
+    align-self: flex-start;
+}
+.team-2-main .manager img:not(.dummy-img){
     margin-top: -10px;
+
 }
 .dummy-img{
     align-self: flex-start;
@@ -1278,7 +1349,7 @@ h1{
         width: 80vw;
         margin: 0 auto;
     }
-    .team-iteration .manager-text
+    
 }
 .team-iteration .section-header{
     background-image: url(../img/fondo-team-2.jpg);
