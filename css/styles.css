@@ -802,6 +802,12 @@ footer a{
         background-position: 50% -200px;
     }
 }
+@media screen and (max-width: 500px){
+    .about-2-main .section-header{
+        background-size: 130%;
+        background-position: 50% -100px;
+    }
+}
 @media screen and (max-width: 900px) {
     .about-1-main .section-header{
         background-position: 0 0;
