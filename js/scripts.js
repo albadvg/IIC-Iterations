@@ -120,12 +120,29 @@ let root = document.querySelector(':root');
 let hFonts = document.querySelector('.headings-fonts');
 let mFonts = document.querySelector('.main-fonts');
 
-fontes.forEach(fonte => {
-    fonte.addEventListener('click', cambiarFonte)
+fontes.forEach(fonteA => {
+    fonteA.addEventListener('click', cambiarFonte);
 });
 
 function cambiarFonte() {
     let fontName = this.innerHTML;
+    if(this.parentElement===mFonts){
+        var mFontsArray = Array.from(mFonts.children);
+        mFontsArray.forEach(font => {
+            font.style.fontWeight = '400';
+        })
+        this.style.fontWeight =  '900';
+
+    } else if (this.parentElement===hFonts){
+        var hFontsArray = Array.from(hFonts.children);
+        hFontsArray.forEach(font => {
+            font.style.fontWeight = '400';
+        })
+        this.style.fontWeight =  '900';
+
+    }
+
+
    if(this.parentElement === mFonts){  
         root.style.setProperty('--mFont', `'${fontName}'`);
    } else {
@@ -133,63 +150,65 @@ function cambiarFonte() {
    }
 }
 
+
+
 //case studies dropdown
 let cases = document.querySelectorAll('.case');
 
 for (let i = 0; i < cases.length; i++) {
     
     cases[i].addEventListener('click', (e) => {
+        //dropdown behaviour
         let plusLines = document.querySelectorAll('.case svg line:first-of-type');
         let line = plusLines[i];
-        let casesTexts = document.querySelectorAll('.case-text');
+        let casesDropdowns = document.querySelectorAll('.case-dropdown');
         let selectionMarks = document.querySelectorAll('.selection-mark');
+        let caseTextLi = document.querySelectorAll(`.case-${i+1}-dropdown li`);
 
         
         if(line.classList.contains('isOpen')){
             line.classList.remove('isOpen');
-            casesTexts[i].classList.remove('case-visible');
-            selectionMarks[i].classList.remove('show-mark')
+            casesDropdowns[i].classList.remove('case-visible');
+            selectionMarks[i].classList.remove('show-mark');
+
+            for(let k = 0 ; k < caseTextLi.length ; k++) {
+                caseTextLi[k].style.transform = 'translateX(-50px)';
+                caseTextLi[k].style.transition = 'transform 1s ease';
+
+
+            }
         } else {
-            for(let j = 0; j < casesTexts.length ; j++) {
-                casesTexts[j].classList.remove('case-visible');
+            //close all other cases and return negative left translate to text
+            for(let j = 0; j < casesDropdowns.length ; j++) {
+                casesDropdowns[j].classList.remove('case-visible');
                 selectionMarks[j].classList.remove('show-mark');
                 plusLines[j].classList.remove('isOpen');
+                let allCasesTextLi = casesDropdowns[j].querySelectorAll(`.case-${j+1}-dropdown li`);
+            
+                for (let l = 0 ; l < allCasesTextLi.length ; l++){
+                    allCasesTextLi[l].style.transform = 'translateX(-50px)';
+                    allCasesTextLi[l].style.transition = 'transform 1s ease';
+                    
+                }
             }
-            casesTexts[i].classList.add('case-visible');
+
+
+            //open target case
+            casesDropdowns[i].classList.add('case-visible');
             selectionMarks[i].classList.add('show-mark');
             line.classList.add('isOpen');
-            
 
-        }
+
+            for(let k = 0 ; k < caseTextLi.length ; k++) {
+                caseTextLi[k].style.transform = 'translateX(0px)';
+                caseTextLi[k].style.transition = 'transform 1s ease';
+
+            }
         
 
+        }
+
     })
-    
-    
+       
 }
 
-// cases.forEach(cas => {
-//     let plus = cas.lastElementChild;
-//     let line = plus.children[1];
-//     let caseText = document.querySelector(`.`)
-//     cas.addEventListener('click', (e) => {
-//         line.classList.toggle('rotate90');
-
-//     })
-
-// })
-
-// plusIcons.forEach(icon => {
-//     icon.addEventListener('click', (e) => {
-//         let line = icon.children[1];
-//         let imgWrapper = icon.parentElement;
-//         let caseText = imgWrapper.nextElementSibling;
-
-//         if(caseText.classList.contains("case-hidden")){
-//             console.log("class-hidden");
-//             caseText.classList.toggle("case-visible");
-//         }
-//         line.classList.toggle('rotate90');
-//         // caseText.classList.toggle('case-hidden');
-//     })
-// })
