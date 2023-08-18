@@ -114,3 +114,82 @@ console.log(isCenterViewport)
   
   window.addEventListener("scroll", avatarPosition);
 
+//fontes
+let fontes = document.querySelectorAll('.font-selector li');
+let root = document.querySelector(':root');
+let hFonts = document.querySelector('.headings-fonts');
+let mFonts = document.querySelector('.main-fonts');
+
+fontes.forEach(fonte => {
+    fonte.addEventListener('click', cambiarFonte)
+});
+
+function cambiarFonte() {
+    let fontName = this.innerHTML;
+   if(this.parentElement === mFonts){  
+        root.style.setProperty('--mFont', `'${fontName}'`);
+   } else {
+        root.style.setProperty('--hFont', `'${fontName}'`);   
+   }
+}
+
+//case studies dropdown
+let cases = document.querySelectorAll('.case');
+
+for (let i = 0; i < cases.length; i++) {
+    
+    cases[i].addEventListener('click', (e) => {
+        let plusLines = document.querySelectorAll('.case svg line:first-of-type');
+        let line = plusLines[i];
+        let casesTexts = document.querySelectorAll('.case-text');
+        let selectionMarks = document.querySelectorAll('.selection-mark');
+
+        
+        if(line.classList.contains('isOpen')){
+            line.classList.remove('isOpen');
+            casesTexts[i].classList.remove('case-visible');
+            selectionMarks[i].classList.remove('show-mark')
+        } else {
+            for(let j = 0; j < casesTexts.length ; j++) {
+                casesTexts[j].classList.remove('case-visible');
+                selectionMarks[j].classList.remove('show-mark');
+                plusLines[j].classList.remove('isOpen');
+            }
+            casesTexts[i].classList.add('case-visible');
+            selectionMarks[i].classList.add('show-mark');
+            line.classList.add('isOpen');
+            
+
+        }
+        
+
+    })
+    
+    
+}
+
+// cases.forEach(cas => {
+//     let plus = cas.lastElementChild;
+//     let line = plus.children[1];
+//     let caseText = document.querySelector(`.`)
+//     cas.addEventListener('click', (e) => {
+//         line.classList.toggle('rotate90');
+
+//     })
+
+// })
+
+// plusIcons.forEach(icon => {
+//     icon.addEventListener('click', (e) => {
+//         let line = icon.children[1];
+//         let imgWrapper = icon.parentElement;
+//         let caseText = imgWrapper.nextElementSibling;
+
+//         if(caseText.classList.contains("case-hidden")){
+//             console.log("class-hidden");
+//             caseText.classList.toggle("case-visible");
+//         }
+//         line.classList.toggle('rotate90');
+//         // caseText.classList.toggle('case-hidden');
+//     })
+// })
