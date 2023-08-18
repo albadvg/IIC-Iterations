@@ -1361,8 +1361,24 @@ h1{
 }
 .cases-1-main .case-text li{
     margin-bottom: 15px;
+}
+li.negative-translate{
     transform: translateX(-50px);
-    /* transition: transform 1s ease; */
+    transition: transform 1s ease;
+}
+
+li.zero-translate{
+    transform: translateX(0px);
+    transition: transform 1s ease;
+}
+@media screen and (max-width:900px) {
+    li.negative-translate{
+        transform: translateY(-20px);
+    }
+    
+    li.zero-translate{
+        transform: translateY(0px);
+    } 
 }
 
 .cases-1-main .case-text span{

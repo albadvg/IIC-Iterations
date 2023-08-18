@@ -172,10 +172,11 @@ for (let i = 0; i < cases.length; i++) {
             selectionMarks[i].classList.remove('show-mark');
 
             for(let k = 0 ; k < caseTextLi.length ; k++) {
-                caseTextLi[k].style.transform = 'translateX(-50px)';
-                caseTextLi[k].style.transition = 'transform 1s ease';
 
-
+                caseTextLi[k].classList.remove('zero-translate')
+                caseTextLi[k].classList.add('negative-translate')
+                // caseTextLi[k].style.transform = 'translateX(-50px)';
+                // caseTextLi[k].style.transition = 'transform 1s ease';
             }
         } else {
             //close all other cases and return negative left translate to text
@@ -186,8 +187,10 @@ for (let i = 0; i < cases.length; i++) {
                 let allCasesTextLi = casesDropdowns[j].querySelectorAll(`.case-${j+1}-dropdown li`);
             
                 for (let l = 0 ; l < allCasesTextLi.length ; l++){
-                    allCasesTextLi[l].style.transform = 'translateX(-50px)';
-                    allCasesTextLi[l].style.transition = 'transform 1s ease';
+                    allCasesTextLi[l].classList.remove('zero-translate');
+                    allCasesTextLi[l].classList.add('negative-translate');
+                    // allCasesTextLi[l].style.transform = 'translateX(-50px)';
+                    // allCasesTextLi[l].style.transition = 'transform 1s ease';
                     
                 }
             }
@@ -200,8 +203,10 @@ for (let i = 0; i < cases.length; i++) {
 
 
             for(let k = 0 ; k < caseTextLi.length ; k++) {
-                caseTextLi[k].style.transform = 'translateX(0px)';
-                caseTextLi[k].style.transition = 'transform 1s ease';
+                caseTextLi[k].classList.remove('negative-translate');
+                caseTextLi[k].classList.add('zero-translate');
+                // caseTextLi[k].style.transform = 'translateX(0px)';
+                // caseTextLi[k].style.transition = 'transform 1s ease';
 
             }
         
