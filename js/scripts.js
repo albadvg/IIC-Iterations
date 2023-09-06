@@ -114,41 +114,41 @@ console.log(isCenterViewport)
   
   window.addEventListener("scroll", avatarPosition);
 
-//fontes
-let fontes = document.querySelectorAll('.font-selector li');
-let root = document.querySelector(':root');
-let hFonts = document.querySelector('.headings-fonts');
-let mFonts = document.querySelector('.main-fonts');
+// //fontes
+// let fontes = document.querySelectorAll('.font-selector li');
+// let root = document.querySelector(':root');
+// let hFonts = document.querySelector('.headings-fonts');
+// let mFonts = document.querySelector('.main-fonts');
 
-fontes.forEach(fonteA => {
-    fonteA.addEventListener('click', cambiarFonte);
-});
+// fontes.forEach(fonteA => {
+//     fonteA.addEventListener('click', cambiarFonte);
+// });
 
-function cambiarFonte() {
-    let fontName = this.innerHTML;
-    if(this.parentElement===mFonts){
-        var mFontsArray = Array.from(mFonts.children);
-        mFontsArray.forEach(font => {
-            font.style.fontWeight = '400';
-        })
-        this.style.fontWeight =  '900';
+// function cambiarFonte() {
+//     let fontName = this.innerHTML;
+//     if(this.parentElement===mFonts){
+//         var mFontsArray = Array.from(mFonts.children);
+//         mFontsArray.forEach(font => {
+//             font.style.fontWeight = '400';
+//         })
+//         this.style.fontWeight =  '900';
 
-    } else if (this.parentElement===hFonts){
-        var hFontsArray = Array.from(hFonts.children);
-        hFontsArray.forEach(font => {
-            font.style.fontWeight = '400';
-        })
-        this.style.fontWeight =  '900';
+//     } else if (this.parentElement===hFonts){
+//         var hFontsArray = Array.from(hFonts.children);
+//         hFontsArray.forEach(font => {
+//             font.style.fontWeight = '400';
+//         })
+//         this.style.fontWeight =  '900';
 
-    }
+//     }
 
 
-   if(this.parentElement === mFonts){  
-        root.style.setProperty('--mFont', `'${fontName}'`);
-   } else {
-        root.style.setProperty('--hFont', `'${fontName}'`);   
-   }
-}
+//    if(this.parentElement === mFonts){  
+//         root.style.setProperty('--mFont', `'${fontName}'`);
+//    } else {
+//         root.style.setProperty('--hFont', `'${fontName}'`);   
+//    }
+// }
 
 
 
@@ -164,19 +164,21 @@ for (let i = 0; i < cases.length; i++) {
         let casesDropdowns = document.querySelectorAll('.case-dropdown');
         let selectionMarks = document.querySelectorAll('.selection-mark');
         let caseTextLi = document.querySelectorAll(`.case-${i+1}-dropdown li`);
+        let header = document.querySelector('header');
+        let mqDesktop = window.matchMedia("(min-width: 900px)");
 
         
         if(line.classList.contains('isOpen')){
             line.classList.remove('isOpen');
             casesDropdowns[i].classList.remove('case-visible');
             selectionMarks[i].classList.remove('show-mark');
+            if(mqDesktop.matches){
+                header.scrollIntoView({behavior: 'smooth'}, true);
+            }
 
             for(let k = 0 ; k < caseTextLi.length ; k++) {
-
                 caseTextLi[k].classList.remove('zero-translate')
                 caseTextLi[k].classList.add('negative-translate')
-                // caseTextLi[k].style.transform = 'translateX(-50px)';
-                // caseTextLi[k].style.transition = 'transform 1s ease';
             }
         } else {
             //close all other cases and return negative left translate to text
@@ -189,9 +191,6 @@ for (let i = 0; i < cases.length; i++) {
                 for (let l = 0 ; l < allCasesTextLi.length ; l++){
                     allCasesTextLi[l].classList.remove('zero-translate');
                     allCasesTextLi[l].classList.add('negative-translate');
-                    // allCasesTextLi[l].style.transform = 'translateX(-50px)';
-                    // allCasesTextLi[l].style.transition = 'transform 1s ease';
-                    
                 }
             }
 
@@ -200,14 +199,13 @@ for (let i = 0; i < cases.length; i++) {
             casesDropdowns[i].classList.add('case-visible');
             selectionMarks[i].classList.add('show-mark');
             line.classList.add('isOpen');
+            cases[i].scrollIntoView({behavior: 'smooth'}, true);
+            
 
 
             for(let k = 0 ; k < caseTextLi.length ; k++) {
                 caseTextLi[k].classList.remove('negative-translate');
                 caseTextLi[k].classList.add('zero-translate');
-                // caseTextLi[k].style.transform = 'translateX(0px)';
-                // caseTextLi[k].style.transition = 'transform 1s ease';
-
             }
         
 

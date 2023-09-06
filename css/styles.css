@@ -1,12 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Raleway:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&family=Rubik:wght@300;400;500;600;800&family=Source+Sans+3:wght@200;300;400;500;600;700;800;900&family=Ubuntu:wght@300;400;500;700&display=swap');
-@font-face {
-    font-family: 'Gill Sans';
-    src:  url('../fonts/gillsans.ttf') format('ttf');
-  }
+
 :root{
     --secondary1: #ff8455;
     --secondary2: #f6e6c7;
-    /* --secondary2: #f0e5d4; */
+    --lighterOrange: #f8eedb;
     --tertiary:rgb(240, 236, 233);
 
     --darkBlue: #1c2e3a;
@@ -14,10 +11,9 @@
     --aqua: #31526699 ;
     --iconColorLight : #8093a2;
     --lightBrown: #e8dec0;
-    /* rgb(240, 239, 233) */
 
-    --mFont: 'Montserrat';
-    --hFont: 'Montserrat';
+    --mFont: 'Open Sans';
+    --hFont: 'Open Sans';
 }
 
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
@@ -206,37 +202,6 @@ nav li:hover .nav-underline{
     transform: translateY(-13px);  
 }
 
-
-ul.sub-menu{
-    width: 100%;
-    padding-left: 0;
-    flex-direction: column;
-    overflow: hidden;
-    transition: height .5s ease;
-}
-.desktop-nav ul.sub-menu{
-    position: absolute;
-    left: 0;
-    top: 60px;
-    z-index: 999;
-    height: 0;
-}
-.hamburguer-nav li ul.sub-menu{
-    display: none;
-}
-.hamburguer-nav li:hover ul.sub-menu{
-    display: block;
-}
-li.sub-menu-item{
-    background-color: white;
-    padding: 20px;     
-}
-li.sub-menu-item:hover a{
-    font-weight: 400;
-}
-.desktop-nav .menu-item:hover ul.sub-menu{
-    height: 25rem; 
-}
 .menu-chevron{
     margin-left: 10px;
     margin-bottom: -2px;
@@ -253,12 +218,7 @@ li.sub-menu-item:hover a{
 .hamburguer-nav{
     display: none;   
 }
-.hamburguer-nav .sub-menu-item{
-    font-size: 14px;
-    border-bottom: none;
-    text-align: right;
-    padding: 20px 0 5px 0;
-}
+
 .hamburguer-icon{
     font-size: 40px;
     color: var(--darkBlue);
@@ -291,7 +251,7 @@ li.sub-menu-item:hover a{
 
 .language-selector li{
     background-color: white;
-    padding: 10px;
+    padding: 10px 10px 10px 13px;
     width: 68px;
     height: 39px;
     font-weight: 300;
@@ -326,7 +286,7 @@ li.sub-menu-item:hover a{
     .hamburguer-nav ul:not(.sub-menu){
         flex-direction: column;
         align-items: center;
-        justify-content: flex-start;
+        justify-content: center;
         background-color: white;
         position: absolute;
         right: -800px;
@@ -348,7 +308,7 @@ li.sub-menu-item:hover a{
         transition: transform .5s ease;
         border-bottom: 1px solid var(--lightBlue);
         width: 60%;
-        padding: 20px 0 8px 0 ;
+        padding: 20px 0 ;
     }
     /* .hamburguer-nav li:hover{
         transform: scale(1.1);
@@ -491,7 +451,7 @@ li.sub-menu-item:hover a{
 }
 @keyframes underlineAnimation{
     from{margin-left: -60px; width: 0%;}
-    to{margin-left: 0; width: 95%;}
+    to{margin-left: 0; width: 92%;}
 }
 
 @keyframes underlineAnimationMobile{
@@ -974,15 +934,12 @@ h1{
     width: 100%;
     padding-bottom: 10px;
 }
-/* .about-2-main .txt-icon img:not(.iberia-svg-text){
-    width: 180px;
-} */
 #ICC{
     font-size: 22px;
 }
 
 .iberia-svg-text{
-    width: 100%;
+    width: 92%;
     margin-bottom: 17px;
 }
 .about-2-main .about-iberia-text{   
@@ -1075,29 +1032,39 @@ h1{
     display: flex;
     flex-direction: column;
     align-items: center;
+    max-width: 700px;
+    margin: 70px auto;
 }
-.investment-intro{
-    width: 70%;
-    padding: 50px 200px 10px 200px;
-}
+
 .investment-intro p:nth-child(2){
-    font-weight: 400;
+    font-weight: 700;
     color: var(--darkBlue);
+    margin-bottom: 35px;
 }
 .investment-criteria{
-    margin-bottom: 50px;
-    width: 70%;
-    padding: 0 200px;
+    position: relative;
+    /* margin-bottom: 50px; */
+}
+.investment-image{
+    position: absolute;
+    right: -80px;
+    top: 30px;
+    opacity: 1;
+    width: 280px;
 }
 .investment-criteria ul{   
     padding: 0;
+    margin: 0;
+    margin-right: 250px;
 }
 .investment-criteria li{
     font-weight: 400;
     font-size: 15px;
-    height: 50px;
     color: var(--darkBlue);
     position: relative;
+    max-width: 530px;
+    line-height: 1.5;
+    padding-bottom: 20px;
 }
 .investment-criteria .bi{
     color: var(--secondary1);
@@ -1119,30 +1086,40 @@ h1{
 }
 @media screen and (max-width:1200px){
     .investment-intro{
-        padding: 60px 40px 10px 40px;
+        /* padding: 60px 40px 10px 40px; */
     }
     .investment-criteria{
-        padding: 0 40px;
+        /* padding: 0 40px; */
     }
 }
 @media screen and (max-width:900px){
+    .investment-image{
+        position: static;
+        margin: 40px auto 0 auto;
+    }
     .investment-intro{
         width: 90%;
-        padding: 60px 40px 10px 40px;
+        padding: 0px 25px;
     }
     .investment-criteria{
         width: 90%;
-        padding: 0 40px;
+        padding: 0 25px;
+    }
+    .investment-criteria ul{
+        margin-right: 0;
+    }
+    .investment-criteria li{
+        max-width: unset;
     }
 }
 @media screen and (max-width:500px){
     .investment-intro{
         width: 90%;
-        padding: 60px 20px 10px 20px;
+        /* padding: 60px 20px 10px 20px; */
     }
     .investment-criteria{
         width: 90%;
-        padding: 0 20px;
+        /* padding: 0 20px 0 25px; */
     }
     .investment-criteria .bi{
         left: -30px;
@@ -1166,13 +1143,6 @@ h1{
     background-image: url(../img/laptop11.jpg);
 }
 
-/* .overlay{
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    background-color: rgba(0, 0, 255, 0.196);
-    z-index: 0;
-} */
 .investment-contact .button-container{
     margin-left: 40px;
     height: 200px;
@@ -1628,7 +1598,7 @@ li.zero-translate{
 .avatar-circle{
     height: 10px;
     width: 10px;
-    background-color: var(--secondary2);
+    background-color: var(--lighterOrange);
     border-radius: 50%;
     position: absolute;
     top: 12px;
@@ -1667,7 +1637,7 @@ li.zero-translate{
     top: 83px;
     left: -12px;
     z-index: -3;
-    background-color: var(--secondary2);
+    background-color: var(--lighterOrange);
     padding-bottom: 80px;
 }
 @media screen and (max-width: 900px){
