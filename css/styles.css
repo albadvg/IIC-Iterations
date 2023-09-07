@@ -2038,20 +2038,30 @@ input[type="submit"]:hover{
 }
 .jobs-contact{
     background-color: var(--tertiary);
-    padding:40px;
+    /* padding:40px; */
     text-align: center;
     font-size: 20px;
+    max-width: 600px;
+    margin: 0 auto;
 }
 .jobs-contact > p{
     margin-top: 10px;
 }
 .numbers .email-img{
 margin: 0 auto;
-width: 211px;
+width: 231px;
 margin-top: 34px;
 }
 .job-underline{
     height: 10px;
     width: 60%;
     background-color: var(--secondary2);
+}
+@media screen and (max-width: 700px){
+    .jobs-intro{
+        padding: 0 20px;
+    }
+    .job{
+        margin: 0 20px 70px 20px;
+    }
 }
