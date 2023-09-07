@@ -17,8 +17,14 @@
 }
 
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
-/* #1859ff */
-/* rgba(0, 255, 255, 0.568) */
+
+/*utilities*/
+.wgt700{
+    font-weight: 700!important;
+}
+.wgt500{
+    font-weight: 500!important;
+}
 
 /* PRODUCTION NOTES */
 .light-banner{
@@ -1771,6 +1777,12 @@ li.zero-translate{
     column-gap: 40px;
     flex-wrap: wrap;
 }
+.contact-no-form .contact-content {
+    column-gap: 60px;
+}
+.contact-no-form .contact-content{
+    padding: 70px;
+}
 form ul{
     margin-top: 0;
     padding: 0;
@@ -1835,7 +1847,10 @@ input[type="submit"]:hover{
     width: 300px;
     height: 582px;
 }
-
+.contact-no-form .map iframe{
+    height: 350px;
+    width: 350px;
+}
 .contact-info>p{
     font-size: 20px;
     font-weight: 800;
@@ -1847,6 +1862,10 @@ input[type="submit"]:hover{
     display: block;
     margin-bottom: 15px;
     font-size: 17px;
+}
+.numbers img{
+    display: block;
+    width: 182px;
 }
 .numbers i{
     margin-right: 10px;
@@ -1863,26 +1882,49 @@ input[type="submit"]:hover{
     font-size: 17px;
 }
 @media screen and (max-width: 1238px){
-    .contact-content{
+    .contact-original .contact-content{
         row-gap: 40px;
     }
-    .contact-info{
+    .contact-original .contact-info{
         order: -1;
         flex-basis: 100%;
     }
-    .map{
+    .contact-original .map{
         order: 1;
     }
-    .map iframe{
+    .contact-original .map iframe{
         width: 400px;
 
     }
-    .contact-info p,
-    .contact-info a{
+    .contact-original .contact-info p,
+    .contact-original .contact-info a{
+        text-align: center;
+    }
+    
+}
+@media screen and (max-width: 900px){
+    .numbers img{
+        margin: 0 auto;
+    }
+    .contact-no-form .contact-content{
+        row-gap: 40px;
+    }
+    .contact-no-form .contact-info{
+        order: -1;
+        flex-basis: 100%;
+    }
+    .contact-no-form .map{
+        order: 1;
+    }
+    .contact-no-form .map iframe{
+        width: 400px;
+
+    }
+    .contact-no-form .contact-info p,
+    .contact-no-form .contact-info a{
         text-align: center;
     }
 }
-
 @media screen and (max-width:900px){
    .map iframe{
     width: 80vw;
@@ -1890,3 +1932,126 @@ input[type="submit"]:hover{
 }
 
 
+/*IMPRINT*/
+.imprint-section .section-header{
+    background-color: var(--darkBlue);
+}
+.imprint-content{
+    padding: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 80px 1fr;
+    column-gap: 60px;
+    max-width: 800px;
+    margin: 70px auto;
+    border: 2px solid var(--darkBlue);
+}
+
+.imprint-content p{
+    font-weight: 400;
+    color: var(--darkBlue);
+    font-size: 17px;
+    margin-top: 0;
+   
+}
+
+.imprint-content #IIC-name{
+    grid-column: 1/3;
+    grid-row: 1/2;
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--darkBlue);
+    margin-top: 0;
+    margin-bottom: 40px;
+}
+
+.imprint-content .col-1{
+    grid-column: 1/2;
+    grid-row: 2/3;
+}
+.imprint-content .col-2{
+    grid-column: 2/3;
+    grid-row: 2/3;
+}
+.imprint-content .col-2 p{
+    margin-bottom: 0;
+}
+.managing-directors{
+    margin-bottom: 20px;
+}
+
+/*TERMS OF USE*/
+.terms-main .section-header{
+    background-color: var(--darkBlue);
+}
+.terms-content,
+.privacy-content{
+    max-width: 850px;
+    margin: 70px auto;
+    line-height: 1.5;
+    padding: 0 20px;
+}
+.terms-content > *,
+.privacy-content > * {
+    font-weight: 300;
+}
+.terms-content ol,
+.privacy-content ol{
+    padding-left: 16px;
+}
+.terms-content li,
+.privacy-content li{
+    margin-bottom: 20px;
+}
+/*PRIVACY POLICY*/
+.privacy-main .section-header{
+    background-color: var(--darkBlue);
+}
+/*JOBS*/
+.jobs-main .section-header{
+    background-color: var(--darkBlue);
+}
+.jobs-content{
+    margin: 70px auto;
+    max-width: 700px;
+
+}
+.jobs-intro{
+    text-align: center;
+    margin-bottom: 60px;
+    font-size: 24px;
+    font-weight: 400;
+}
+.job{
+    margin: 0 auto;
+    margin-bottom: 70px;
+    border: 2px solid var(--secondary2);
+    padding: 30px 40px 25px 45px;
+    position: relative;
+    max-width: 600px;
+}
+.job-title{
+    margin-top: 0;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--darkBlue);
+}
+.jobs-contact{
+    background-color: var(--tertiary);
+    padding:40px;
+    text-align: center;
+    font-size: 20px;
+}
+.jobs-contact > p{
+    margin-top: 10px;
+}
+.numbers .email-img{
+margin: 0 auto;
+width: 211px;
+margin-top: 34px;
+}
+.job-underline{
+    height: 10px;
+    width: 60%;
+    background-color: var(--secondary2);
+}
