@@ -1917,7 +1917,7 @@ input[type="submit"]:hover{
         order: 1;
     }
     .contact-no-form .map iframe{
-        width: 400px;
+        width: 80vw;
 
     }
     .contact-no-form .contact-info p,
@@ -1926,7 +1926,7 @@ input[type="submit"]:hover{
     }
 }
 @media screen and (max-width:900px){
-   .map iframe{
+   .contact-original .map iframe{
     width: 80vw;
    }
 }
