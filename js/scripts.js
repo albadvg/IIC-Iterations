@@ -1,11 +1,11 @@
 //MOBILE MENU//////////////////
 
-let burguerButton = document.querySelector('.hamburguer-icon');
-let closeButton = document.querySelector('.hamburguer-nav .bi-x-lg');
-let mobileMenu = burguerButton.nextElementSibling;
+let burgerButton = document.querySelector('.burger-icon');
+let closeButton = document.querySelector('.burger-nav .bi-x-lg');
+let mobileMenu = burgerButton.nextElementSibling;
 let body =  document.querySelector('body');
 
-burguerButton.addEventListener('click', showMenu);
+burgerButton.addEventListener('click', showMenu);
 closeButton.addEventListener('click', hideMenu)
 
 function showMenu() {
@@ -22,7 +22,7 @@ function hideMenu() {
 
 
 //ABOUT US UNDERLINES////////////////
-let blueBars = document.querySelectorAll('.about-2-main .about-underline');
+let blueBars = document.querySelectorAll('.about-page .about-underline');
 
 function blueUnderlineVisible(entries) {
     entries.map((entry) => {
@@ -114,43 +114,6 @@ console.log(isCenterViewport)
   
   window.addEventListener("scroll", avatarPosition);
 
-// //fontes
-// let fontes = document.querySelectorAll('.font-selector li');
-// let root = document.querySelector(':root');
-// let hFonts = document.querySelector('.headings-fonts');
-// let mFonts = document.querySelector('.main-fonts');
-
-// fontes.forEach(fonteA => {
-//     fonteA.addEventListener('click', cambiarFonte);
-// });
-
-// function cambiarFonte() {
-//     let fontName = this.innerHTML;
-//     if(this.parentElement===mFonts){
-//         var mFontsArray = Array.from(mFonts.children);
-//         mFontsArray.forEach(font => {
-//             font.style.fontWeight = '400';
-//         })
-//         this.style.fontWeight =  '900';
-
-//     } else if (this.parentElement===hFonts){
-//         var hFontsArray = Array.from(hFonts.children);
-//         hFontsArray.forEach(font => {
-//             font.style.fontWeight = '400';
-//         })
-//         this.style.fontWeight =  '900';
-
-//     }
-
-
-//    if(this.parentElement === mFonts){  
-//         root.style.setProperty('--mFont', `'${fontName}'`);
-//    } else {
-//         root.style.setProperty('--hFont', `'${fontName}'`);   
-//    }
-// }
-
-
 
 //case studies dropdown
 let cases = document.querySelectorAll('.case');
@@ -162,7 +125,7 @@ for (let i = 0; i < cases.length; i++) {
         let plusLines = document.querySelectorAll('.case svg line:first-of-type');
         let line = plusLines[i];
         let casesDropdowns = document.querySelectorAll('.case-dropdown');
-        let selectionMarks = document.querySelectorAll('.selection-mark');
+        let selectionUnderlines = document.querySelectorAll('.selection-underline');
         let caseTextLi = document.querySelectorAll(`.case-${i+1}-dropdown li`);
         let header = document.querySelector('header');
         let mqDesktop = window.matchMedia("(min-width: 900px)");
@@ -171,7 +134,7 @@ for (let i = 0; i < cases.length; i++) {
         if(line.classList.contains('isOpen')){
             line.classList.remove('isOpen');
             casesDropdowns[i].classList.remove('case-visible');
-            selectionMarks[i].classList.remove('show-mark');
+            selectionUnderlines[i].classList.remove('show-underline');
             if(mqDesktop.matches){
                 header.scrollIntoView({behavior: 'smooth'}, true);
             }
@@ -184,7 +147,7 @@ for (let i = 0; i < cases.length; i++) {
             //close all other cases and return negative left translate to text
             for(let j = 0; j < casesDropdowns.length ; j++) {
                 casesDropdowns[j].classList.remove('case-visible');
-                selectionMarks[j].classList.remove('show-mark');
+                selectionUnderlines[j].classList.remove('show-underline');
                 plusLines[j].classList.remove('isOpen');
                 let allCasesTextLi = casesDropdowns[j].querySelectorAll(`.case-${j+1}-dropdown li`);
             
@@ -197,7 +160,7 @@ for (let i = 0; i < cases.length; i++) {
 
             //open target case
             casesDropdowns[i].classList.add('case-visible');
-            selectionMarks[i].classList.add('show-mark');
+            selectionUnderlines[i].classList.add('show-underline');
             line.classList.add('isOpen');
             cases[i].scrollIntoView({behavior: 'smooth'}, true);
             

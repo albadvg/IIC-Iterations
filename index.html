@@ -24,7 +24,7 @@
 <body class="home-page">
     <header>
         <div class="logo-container">
-            <a href="index.html"><img src="img/logo.svg" alt="iberia industry capital logo" title="IIC logo" loading="lazy"> </a>  
+            <a href="index.html"><img src="img/logo.svg" class="logo-img" alt="iberia industry capital logo" title="IIC logo" loading="lazy"> </a>  
         </div>
         <nav class="desktop-nav">
             <ul>
@@ -37,8 +37,8 @@
                 <li class="menu-item"><a href="contact-no-form.html">CONTACT 2</a><div class="nav-underline"></div></li>
             </ul>
         </nav>
-        <nav class="hamburguer-nav">
-            <i class="bi bi-list hamburguer-icon"></i>
+        <nav class="burger-nav">
+            <i class="bi bi-list burger-icon"></i>
             <ul>
                 <i class="bi bi-x-lg"></i>
                 
@@ -54,14 +54,14 @@
         </nav>
         <div class="language-selector">
             <ul>  
-                <li>EN <img src="img/chevron-down-icon.svg" alt="language selector dropdown"></li>            
-                <li class="hidden">DE</li>
-                <li class="hidden">ES</li>
+                <li class="language">EN <img src="img/chevron-down-icon.svg" class="language-selector-arrow" alt="language selector dropdown"></li>            
+                <li class="language hidden">DE</li>
+                <li class="language hidden">ES</li>
             </ul>
         </div>
     </header>
     <div class="hero-container">
-        <img src="img/logo-icon-white.svg" alt="" id="icono-hero">
+        <img src="img/logo-icon-white.svg" alt="" id="hero-icon">
         <div class="bars-wrapper">
             <div class="bar" id="bar-1"></div>
             <div class="bar" id="bar-2"></div>
@@ -234,7 +234,7 @@
             <div class="bar" id="bar-169"></div>
             <div class="bar" id="bar-170"></div>
 
-        </div> 
+        </div>  <!--bars-wrapper-->
 
         <div class="hero__bars"></div>
         <div class="hero-text-container">
@@ -249,15 +249,15 @@
     </div>
     <main>
         
-        <section class="about-us">
-            <div class="section-text">
+        <section class="home-section home-section-about">
+            <div class="home-section-text">
                 <div class="text-container">
                     <h2>About us</h2>
                     <p>Iberia Industry Capital Group (IIC) is an experienced industrial holding firm focused on acquiring businesses in special situations, such as distressed companies, corporate divestitures and complex carve outs. </p>
                 </div>
-                <div class="button-container">
-                    <p>Learn more about us</p>
-                    <a href="about.html" class="button-2">
+                <div class="btn2-container">
+                    <p class="btn2-txt">Learn more about us</p>
+                    <a href="about.html" class="btn2">
                         <div>
                             <i class="bi bi-arrow-right"></i>
                         </div>
@@ -265,30 +265,30 @@
                 </div>                
             </div>
 
-            <div class="section-img about-us-img">
+            <div class="home-section-img">
                 <div class="owl-carousel owl-theme carousel-home">
                     <img src="img/blast-furnace.webp" alt="blast furnace industry" width="100%">
                 </div> 
             </div>                 
         </section>
 
-        <section class="investment-focus">
-            <div class="section-text">
+        <section class="home-section home-section-investment">
+            <div class="home-section-text">
                 <div class="text-container">
                     <h2>Investment Focus</h2>
                     <p>Our investment strategy is focused on businesses in special situations, such as strategic refocus of the seller, insufficient earnings or a lack of successors.
                     </p>
                 </div>
-                <div class="button-container">
-                    <p>Check out our investment criteria</p>
-                    <a href="investment.html" class="button-2">
+                <div class="btn2-container">
+                    <p class="btn2-txt">Check out our investment criteria</p>
+                    <a href="investment.html" class="btn2">
                         <div>
                             <i class="bi bi-arrow-right"></i>
                         </div>
                     </a> 
                 </div>
             </div>
-            <div class="section-img investment-img">
+            <div class="home-section-img">
                 <div class="container">
                     <div class="owl-carousel owl-theme carousel-home">
                         <img src="img/automotive-industry.webp" alt="vehicle manufacturing plant with robotic arms" width="100%">
@@ -305,15 +305,15 @@
             </div>   
         </section>
 
-        <section class="management-team">
-            <div class="section-text">
+        <section class="home-section home-section-team">
+            <div class="home-section-text">
                 <div class="text-container">
                     <h2>Management Team</h2>
                     <p>The Iberia Industry Capital Group is led by a team of international M&A, turnaround and restructuring experts.</p>
                 </div>
-                <div class="button-container">
-                    <p>Meet the managers</p>
-                    <a href="team.html" class="button-2">
+                <div class="btn2-container">
+                    <p class="btn2-txt">Meet the managers</p>
+                    <a href="team.html" class="btn2">
                         <div>
                             <i class="bi bi-arrow-right"></i>
                         </div>
@@ -321,7 +321,7 @@
                 </div>
                           
             </div>
-            <div class="section-img management-img">
+            <div class="home-section-img">
                 <div class="container">
                     <div class="owl-carousel owl-theme carousel-home">
                         <img src="img/office.webp" alt="manager's meeting room in office" width="100%">
@@ -330,10 +330,10 @@
                 </div>
             </div>   
         </section>
-        <section class="contact light-banner">
-            <div class="contact-text">
+        <section class="gray-banner gray-banner-contact">
+            <div class="gray-banner-txt home-banner-txt">
                 <p>Do you have an opportunnity that meets our <a href="">investment criteria</a>?</p>
-                <a href="contact.html" class="button">Contact us</a>
+                <a href="contact.html" class="btn1">Contact us</a>
             </div>
         
         </section>
