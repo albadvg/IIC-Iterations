@@ -6,7 +6,7 @@ let mobileMenu = burgerButton.nextElementSibling;
 let body =  document.querySelector('body');
 
 burgerButton.addEventListener('click', showMenu);
-closeButton.addEventListener('click', hideMenu)
+closeButton.addEventListener('click', hideMenu);
 
 function showMenu() {
     mobileMenu.classList.add('show-menu');
@@ -20,7 +20,6 @@ function hideMenu() {
 }
 
 
-
 //ABOUT US UNDERLINES////////////////
 let blueBars = document.querySelectorAll('.about-page .about-underline');
 
@@ -30,9 +29,9 @@ function blueUnderlineVisible(entries) {
             entry.target.style.animation = "aboutUnderlineAnimation 2s ease";
             entry.target.style.animationFillMode = "forwards";
             observeBlueBars.unobserve(entry.target);
-        };
+        }
     });
-};
+}
 
 const observeBlueBars = new IntersectionObserver(blueUnderlineVisible);
 
@@ -72,7 +71,7 @@ function slideInVisible(entries) {
             
         }
     });
-};
+}
 
 const slideInObserver = new IntersectionObserver(slideInVisible);
 slideInElements.forEach(element => slideInObserver.observe(element));
@@ -93,29 +92,25 @@ slideInElements.forEach(element => slideInObserver.observe(element));
         rect.right <= (window.innerWidth || document.documentElement.clientWidth)
     );
   }
-console.log(isCenterViewport)
 
   function avatarPosition() {
     avatars.forEach(avatar => {
         if(isCenterViewport(avatar)){
             if(window.matchMedia("(max-width: 900px)").matches){
                 avatar.style.transform = 'scale(3) translate(10px)';
-                console.log("menor que 900")
             } else {
                 avatar.style.transform = 'scale(3) translate(20px)';
-                console.log("maior que 900")
             }
         } else {
             avatar.style.transform = 'scale(1) translate(0)';
-            console.log("fora de vista")
         }
-    })
+    });
   }
   
   window.addEventListener("scroll", avatarPosition);
 
 
-//case studies dropdown
+//CASE STUDIES DROPDOWNS
 let cases = document.querySelectorAll('.case');
 
 for (let i = 0; i < cases.length; i++) {
@@ -140,8 +135,8 @@ for (let i = 0; i < cases.length; i++) {
             }
 
             for(let k = 0 ; k < caseTextLi.length ; k++) {
-                caseTextLi[k].classList.remove('zero-translate')
-                caseTextLi[k].classList.add('negative-translate')
+                caseTextLi[k].classList.remove('zero-translate');
+                caseTextLi[k].classList.add('negative-translate');
             }
         } else {
             //close all other cases and return negative left translate to text
@@ -174,7 +169,7 @@ for (let i = 0; i < cases.length; i++) {
 
         }
 
-    })
+    });
        
 }
 
