@@ -82,6 +82,9 @@
         border-radius: 4px;
         border: 3px solid var(--darkBlue);
         transition: all .3s ease;
+        text-align: center;
+        line-height: 1.4;
+        max-width: 200px;
     }
     .btn1:hover{
         background-color: var(--darkBlue);
@@ -1300,6 +1303,9 @@
         align-items: flex-start;
         max-width: 500px;
     }
+    .jobs-banner-txt p{
+        max-width: 450px;
+    }
     .jobs-banner-txt span{
         font-weight: 600;
         font-size: 20px;
@@ -1585,7 +1591,13 @@
     .privacy-content li{
         margin-bottom: 20px;
     }
-
+    .privacy-content li::marker{
+        font-weight: bold;
+    }
+    .terms-content > p,
+    .privacy-content > p{
+        margin-bottom: 50px;
+    }
     /************************JOBS PAGE*************************************/
     .jobs-page .section-header{
         height: 120px;
