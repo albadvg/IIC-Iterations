@@ -818,10 +818,17 @@
         top: 30px;
         opacity: 1;
     }
+    .spanish-page .investment-image {
+        top: 60px;
+    }
+   
     .investment-criteria ul{   
         padding: 0;
         margin: 0;
         margin-right: 250px;
+    }
+    .spanish-page .investment-criteria ul{
+        margin-right: 200px;
     }
     .investment-criteria li{
         max-width: 530px;
@@ -859,6 +866,9 @@
         }
         .investment-criteria ul{
             margin-right: 0;
+        }
+        .spanish-page .investment-criteria ul{
+            margin-right: 0px;
         }
         .investment-criteria li{
             max-width: unset;
