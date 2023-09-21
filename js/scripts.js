@@ -1,7 +1,7 @@
 //MOBILE MENU//////////////////
 
-let burgerButton = document.querySelector('.burger-icon');
-let closeButton = document.querySelector('.burger-nav .bi-x-lg');
+let burgerButton = document.querySelector('.top-nav__burger');
+let closeButton = document.querySelector('.top-nav__close');
 let mobileMenu = burgerButton.nextElementSibling;
 let body =  document.querySelector('body');
 
