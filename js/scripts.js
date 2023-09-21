@@ -21,7 +21,7 @@ function hideMenu() {
 
 
 //ABOUT US UNDERLINES////////////////
-let blueBars = document.querySelectorAll('.about-page .about-underline');
+let blueBars = document.querySelectorAll('.txt-icon__underline');
 
 function blueUnderlineVisible(entries) {
     entries.map((entry) => {
@@ -36,6 +36,28 @@ function blueUnderlineVisible(entries) {
 const observeBlueBars = new IntersectionObserver(blueUnderlineVisible);
 
 blueBars.forEach(bar => observeBlueBars.observe(bar));
+
+//SLIDE IN ELEMENTS// used in about section
+
+//select elements with class 'slide-in'
+let slideInElements = document.querySelectorAll('.slide-in');
+
+//callback function to be called when elements are visible
+function slideInVisible(entries) {
+    entries.forEach((entry) => {
+        if(entry.isIntersecting) {
+                //apply animation to visible element
+                entry.target.style.animation = "slideInAnimation 2s ease";
+                entry.target.style.animationFillMode = "forwards"; 
+        }
+    });
+}
+
+//create intersection Observer with the callback function
+const slideInObserver = new IntersectionObserver(slideInVisible);
+
+//observe each 'slide-in' element
+slideInElements.forEach(element => slideInObserver.observe(element));
 
 //LAZY LOAD
 
@@ -53,62 +75,6 @@ const observeLazyImg = new IntersectionObserver(lazyElementVisible);
 
 lazyElements.forEach(lazyElement => observeLazyImg.observe(lazyElement));
 
-//SLIDE IN ELEMENTS
-
-let slideInElements = document.querySelectorAll('.spread-apart');
-
-function slideInVisible(entries) {
-    entries.map((entry) => {
-        if(entry.isIntersecting) {
-            if(window.matchMedia("(max-width: 900px)")){
-                entry.target.style.animation = "slideInAnimation 2s ease";
-                entry.target.style.animationFillMode = "forwards"; 
-                
-            } else {
-                entry.target.style.animation = "spreadAnimation 2s ease";
-                entry.target.style.animationFillMode = "forwards";  
-            }
-            
-        }
-    });
-}
-
-const slideInObserver = new IntersectionObserver(slideInVisible);
-slideInElements.forEach(element => slideInObserver.observe(element));
-
-// //TEAM AVATARS
-
-
-  let avatars = document.querySelectorAll('.avatar-circle');
-  let marginPercentage = (20 * window.innerHeight) / 100;   
-  console.log(marginPercentage);
-
-  function isCenterViewport(element){
-    const rect = element.getBoundingClientRect();
-    return (
-        rect.top >= marginPercentage &&
-        rect.left >= 0 &&
-        rect.bottom <= (window.innerHeight - marginPercentage * 1.5 || document.documentElement.clientHeight - marginPercentage * 1.5) &&
-        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-    );
-  }
-
-  function avatarPosition() {
-    avatars.forEach(avatar => {
-        if(isCenterViewport(avatar)){
-            if(window.matchMedia("(max-width: 900px)").matches){
-                avatar.style.transform = 'scale(3) translate(10px)';
-            } else {
-                avatar.style.transform = 'scale(3) translate(20px)';
-            }
-        } else {
-            avatar.style.transform = 'scale(1) translate(0)';
-        }
-    });
-  }
-  
-  window.addEventListener("scroll", avatarPosition);
-
 
 //CASE STUDIES DROPDOWNS
 let cases = document.querySelectorAll('.case');
@@ -117,17 +83,17 @@ for (let i = 0; i < cases.length; i++) {
     
     cases[i].addEventListener('click', (e) => {
         //dropdown behaviour
-        let plusLines = document.querySelectorAll('.case svg line:first-of-type');
+        let plusLines = document.querySelectorAll('.case__plus-line');
         let line = plusLines[i];
-        let casesDropdowns = document.querySelectorAll('.case-dropdown');
-        let selectionUnderlines = document.querySelectorAll('.selection-underline');
-        let caseTextLi = document.querySelectorAll(`.case-${i+1}-dropdown li`);
+        let casesDropdowns = document.querySelectorAll('.dropdown');
+        let selectionUnderlines = document.querySelectorAll('.case__underline');
+        let caseTextLi = document.querySelectorAll(`.dropdown--${i+1} li`);
         let header = document.querySelector('header');
         let mqDesktop = window.matchMedia("(min-width: 900px)");
 
         
-        if(line.classList.contains('isOpen')){
-            line.classList.remove('isOpen');
+        if(line.classList.contains('is-open')){
+            line.classList.remove('is-open');
             casesDropdowns[i].classList.remove('case-visible');
             selectionUnderlines[i].classList.remove('show-underline');
             if(mqDesktop.matches){
@@ -143,8 +109,8 @@ for (let i = 0; i < cases.length; i++) {
             for(let j = 0; j < casesDropdowns.length ; j++) {
                 casesDropdowns[j].classList.remove('case-visible');
                 selectionUnderlines[j].classList.remove('show-underline');
-                plusLines[j].classList.remove('isOpen');
-                let allCasesTextLi = casesDropdowns[j].querySelectorAll(`.case-${j+1}-dropdown li`);
+                plusLines[j].classList.remove('is-open');
+                let allCasesTextLi = casesDropdowns[j].querySelectorAll(`.dropdown--${j+1} li`);
             
                 for (let l = 0 ; l < allCasesTextLi.length ; l++){
                     allCasesTextLi[l].classList.remove('zero-translate');
@@ -156,7 +122,7 @@ for (let i = 0; i < cases.length; i++) {
             //open target case
             casesDropdowns[i].classList.add('case-visible');
             selectionUnderlines[i].classList.add('show-underline');
-            line.classList.add('isOpen');
+            line.classList.add('is-open');
             cases[i].scrollIntoView({behavior: 'smooth'}, true);
             
 
@@ -173,3 +139,34 @@ for (let i = 0; i < cases.length; i++) {
        
 }
 
+// MANAGEMENT TEAM ANIMATED CIRCLES
+
+
+let avatars = document.querySelectorAll('.manager__circle');
+let marginPercentage = (20 * window.innerHeight) / 100;   
+
+function isCenterViewport(element){
+  const rect = element.getBoundingClientRect();
+  return (
+      rect.top >= marginPercentage &&
+      rect.left >= 0 &&
+      rect.bottom <= (window.innerHeight - marginPercentage * 1.5 || document.documentElement.clientHeight - marginPercentage * 1.5) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+  );
+}
+
+function avatarPosition() {
+  avatars.forEach(avatar => {
+      if(isCenterViewport(avatar)){
+          if(window.matchMedia("(max-width: 900px)").matches){
+              avatar.style.transform = 'scale(3) translate(10px)';
+          } else {
+              avatar.style.transform = 'scale(3) translate(20px)';
+          }
+      } else {
+          avatar.style.transform = 'scale(1) translate(0)';
+      }
+  });
+}
+
+window.addEventListener("scroll", avatarPosition);
