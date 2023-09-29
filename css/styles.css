@@ -181,7 +181,8 @@
 
     /**/
     .title-banner--legal{
-        height: 120px;
+        height: unset;
+        padding: 20px;
         background-color: var(--darkBlue);
     }
 
@@ -352,6 +353,7 @@
 }
 
 .btn2__icon{
+    flex-shrink: 0;
     margin-right: auto;
     border-radius: 50%;
     position: relative;
@@ -618,7 +620,7 @@ header{
 }
 
 .language-switch .language-switch__list:hover{
-    height: calc(39px * 3);
+    height: calc(39px * 2);
 }
 
 .language-switch:hover .language-switch__arrow{
