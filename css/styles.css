@@ -377,10 +377,13 @@
     transition: all .5s ease;
 }
 
-.btn2__icon:hover i{
-    transform: translateX(15px);
-    opacity: 1;
+@media (pointer: fine) {
+    .btn2__icon:hover i{
+        transform: translateX(15px);
+        opacity: 1;
+    }
 }
+
 
 @media screen and (max-width: 900px) {
     .btn2__txt {
