@@ -1024,21 +1024,20 @@ header{
 }
 
 .spanish-page .investment__img {
-    top: 60px;
+    top: 90px;
 }
 
 .investment__list{   
     padding: 0;
     margin: 0;
+    margin-right: 215px;
+}
+
+.spanish-page .investment__list {
     margin-right: 250px;
 }
 
-.spanish-page .investment__list{
-    margin-right: 200px;
-}
-
 .investment__item{
-    max-width: 530px;
     padding-bottom: 20px;
     position: relative;
     font-size: 15px;
